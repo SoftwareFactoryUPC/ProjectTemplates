@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SignalR Chat Demo</title>
+</head>
+<body>
+    <input type="text" id="message" />
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+    <ul id="discussion"></ul>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalR-2.0.0.min.js"></script>-->
+    <script src="Scripts/jquery.signalR-2.0.0.min.js"></script>
+
+    <script src="signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            var chat = $.connection.chatHub;
+            chat.client.broadcastMessage = function (name, message) {
+                //dos líneas que codifica el contenido HTML antes de mostrar que son opcionales
+                //y muestran una manera simple de evitar la inyección de la escritura
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                //añadir el mensaje a la página
+                $('#discussion').append('<li><strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+
+            $('#displayname').val(prompt('Enter your name:', ""));
+            $('#message').focus();
+            //muestra cómo abrir una conexión con el Hub
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    //llamar al método de envío en el Hub
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                    //limpia el texbox y el focus para siguientes comentarios
+                    $('#message').val('').focus();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

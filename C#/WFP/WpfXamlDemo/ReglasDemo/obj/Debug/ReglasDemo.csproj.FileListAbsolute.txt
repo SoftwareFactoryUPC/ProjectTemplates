@@ -1,0 +1,13 @@
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\bin\Debug\ReglasDemo.exe.config
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\bin\Debug\ReglasDemo.exe
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\bin\Debug\ReglasDemo.pdb
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\MainWindow.baml
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\MainWindow.g.cs
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\App.g.cs
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo_MarkupCompile.cache
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.g.resources
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.Properties.Resources.resources
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.csproj.GenerateResource.Cache
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.exe
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\WpfXamlDemo\ReglasDemo\obj\Debug\ReglasDemo.pdb

@@ -1,0 +1,9 @@
+﻿@model Int32
+
+<div class="form-group">
+    <div class="fg-line">
+        @Html.LabelFor(x => x, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x, new { @class = "form-control" })
+    </div>
+    <small class="help-block">This is an error help block</small>
+</div>

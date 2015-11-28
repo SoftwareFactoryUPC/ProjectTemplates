@@ -1,0 +1,8 @@
+﻿@model DateTime?
+
+<div class="form-group">
+    <div class="dropdown fg-line">
+        @Html.LabelFor(x => x, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x, new { @class = "form-control date-picker", data_toggle = "dropdown" })
+    </div>
+</div>

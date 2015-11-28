@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" x:Class="WpfXamlDemo.EditarEstudiantes"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Title="EditarEstudiantes" Height="300" Width="379.787">
+    <Grid>
+
+        <Custom:DataGrid  Name="EditarEstudianteGrid"  AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.027,-1.658" Height="163" Width="332">
+            <Custom:DataGrid.Columns>
+                <Custom:DataGridTextColumn Header="ID" Width="45" Binding="{Binding Path=EstudianteID}" />
+                <Custom:DataGridTextColumn Header="Nombre" Width="85" Binding="{Binding Path=Nombre}" />
+                <Custom:DataGridTextColumn Header="Apellido" Width="85" Binding="{Binding Path=Apellido}" />
+                <Custom:DataGridTextColumn Header="Sexo" Width="45" Binding="{Binding Path=Sexo}" />
+                <Custom:DataGridTextColumn Header="Promedio" Width="65" Binding="{Binding Path=Promedio}" />
+            </Custom:DataGrid.Columns>
+        </Custom:DataGrid>
+        <Button Content="Editar" HorizontalAlignment="Left" Margin="78,213,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Borrar" HorizontalAlignment="Left" Margin="216,213,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

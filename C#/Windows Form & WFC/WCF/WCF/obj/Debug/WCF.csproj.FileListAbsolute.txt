@@ -1,0 +1,5 @@
+C:\Users\LENOVO\Documents\Visual Studio 2012\Projects\WCF\WCF\bin\WCF.dll
+C:\Users\LENOVO\Documents\Visual Studio 2012\Projects\WCF\WCF\bin\WCF.pdb
+C:\Users\LENOVO\Documents\Visual Studio 2012\Projects\WCF\WCF\obj\Debug\WCF.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO\Documents\Visual Studio 2012\Projects\WCF\WCF\obj\Debug\WCF.dll
+C:\Users\LENOVO\Documents\Visual Studio 2012\Projects\WCF\WCF\obj\Debug\WCF.pdb

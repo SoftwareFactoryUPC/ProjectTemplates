@@ -1,0 +1,104 @@
+*{ /* selector universal*/
+	margin: 0px; /* el espacio entre el borde con el espacio externo*/
+	padding: 0px; /* el espacio entre el contenido con el borde*/
+}
+
+header, section, footer, aside, nav, article, figure, figcaption, hgroup{
+	display: block; /* el navegador maneje todas las estructuras a nivel de bloque*/
+}
+
+/**/
+ h1{
+	font: bold 20px verdana,sans-serif;
+}
+h2{
+	font: bold 14px verdana, sans-serif;
+}
+
+/**/
+p#seccion{
+	font-size: 20px;
+}
+p.articulo{
+	color: red;
+}
+p[name="aside"]{
+	font-size: 20px;
+	color:red;
+}
+
+/**/
+body{
+	text-align:center; /*importante centrar*/
+}
+
+/**/
+div#agrupar{
+	width:90%; /*ancho del contenedor*/
+	margin:15px auto; /* margen superior e inferior*/ /*margen izquierdo derecho*/
+	text-align:left;
+}
+
+/**/
+header#cabecera{
+	background: #FFFBB9; /*Fondo del borde*/
+	border: 1px solid #999999; /*grosor de borde, estilo de borde y el color para el borde*/
+	padding: 20px; 
+}
+
+/**/
+nav#menu{
+	background: #CCCCCC;
+	padding: 5px 15px
+}
+
+nav#menu li{
+	display: inline-block; /*que se muestre en estilo horizontal*/
+	list-style: none; /* le quita las viñetas */
+	padding: 5px; /*espacio que existe entre los elementos Li con su borde*/
+	font: bold 14px verdana, sans-serif;		
+}
+
+/**/
+section#seccion{
+	width: 70%; /*ancho de 70 %*/
+	margin: 20px; 
+	float: left; /* no respeta las estrcuturas en bloque - se va a la iwzquierda- */
+}
+
+aside#columna{
+	width: 20%; /*ancho de 20%*/
+	margin: 20px 0px; /*superior inferior (20px)  laterales(0px)*/
+	float: left; 
+	padding: 20px; 
+	background: #CCCCCC;
+}
+
+/**/
+footer#pie{
+	clear: both; /*restaura el flujo normal del documento con la propiedad clear - empuja los elementos  verticalmente-*/
+	background: #CCCCCC;
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid #999999;
+}
+
+/**/
+article{
+	background: #FFFBCC;
+	border: 1px solid #999999;
+	padding: 20px;
+	margin-bottom: 15px;
+}
+
+article footer{
+	text-align: right;
+}
+
+time{
+	color: #999999;
+}
+
+figcaption{
+	font: italic 14px verdana, sans-serif;
+}

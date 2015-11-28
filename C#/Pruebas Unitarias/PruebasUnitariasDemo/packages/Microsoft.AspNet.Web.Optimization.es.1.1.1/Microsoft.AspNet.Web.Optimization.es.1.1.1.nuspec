@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNet.Web.Optimization.es</id>
+    <version>1.1.1</version>
+    <title>Recursos en español para Microsoft ASP.NET Web Optimization</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/aspnetcomponent_rtw_lang3.htm</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Este paquete contiene los ensamblados satélites en español para ASP.NET Web Optimization.</description>
+    <summary>Recursos en español para el paquete Microsoft.AspNet.Web.Optimization</summary>
+    <language>es</language>
+    <tags>Microsoft AspNet optimization bundling minification</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Web.Optimization" version="[1.1.1]" />
+    </dependencies>
+  </metadata>
+</package>

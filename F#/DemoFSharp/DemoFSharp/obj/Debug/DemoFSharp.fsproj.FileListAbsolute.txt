@@ -1,0 +1,9 @@
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\DemoFSharp.exe.config
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\DemoFSharp.XML
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\DemoFSharp.exe
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\DemoFSharp.pdb
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\FSharp.Core.dll
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\FSharp.Core.xml
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\bin\Debug\es\FSharp.Core.resources.dll
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\obj\Debug\DemoFSharp.exe
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\DemoFSharp\DemoFSharp\obj\Debug\DemoFSharp.pdb

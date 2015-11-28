@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="../Content/css/bootstrap.min.css">
+    </head>
+    
+    <body class="container-fluid">
+
+         <header class="row">
+          <div class="col-md-3 col-md-offset-4">   
+           <h1>Formulario</h1>
+          </div>  
+         </header>              
+
+        <section class="row">
+             
+             <article class="col-md-3 col-md-offset-4" >
+                 
+                 <form>
+                   <div class="form-group">
+                           
+                       <label>Nombre</label>     
+                       <input type="text" name="txtNombre" class="form-control" id="textNombre">      
+                       <label>Apellido</label>
+                       <input type="text" name="txtApellido" class="form-control" id="textApellido">
+                       <label>Fecha de Nacimiento</label>                
+                       <input type="date" name="dateNacimiento" class="form-control" id="dateNacimiento">
+                       <label>Pa&iacute;s</label>
+                       <select name="selectPais" class="form-control" id="comboBoxPais">
+                           <option value="">  </option>
+                       </select>   
+                   </div>                     
+                 
+                 
+                 <div class="form-group">
+                 
+                    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalHobbie">
+                      Agregar Hobbie
+                    </button><br/><br/>                     
+
+                    <table class="table table-bordered">
+                         <thead>
+                             <th>Hobbie</th><th></th>
+                         </thead>
+                         <tbody>
+
+                         </tbody>
+                    </table> 
+                    </div> 
+                    
+                    <input type="submit" name="btnSubmit" value="Registrar" class="btn btn-primary">         
+                </form>                                                                                     
+             </article>
+             
+             
+        </section>
+        
+        <footer>
+                 <div class="modal fade bs-example-modal-sm" id="modalHobbie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">    
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">    
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Agregar Hobbie</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="form-group">
+                            <label>Hobbie</label>
+                            <input type="text" id="inputModalHobbie" placeholder="Hobbie" class="form-control">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btnAgregarHobbie">Agregar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+            
+            
+        </footer>
+
+
+ 
+
+
+    </body>
+     <script src="../Content/js/jquery-1.11.2.min.js"></script>
+     <script src="../Content/js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+         
+         $(function(){
+
+             var paises;
+             
+                $.ajax({
+                  url: "paises.json",
+                  type: "POST",
+                  dataType : "text",
+                  async: false,
+                  success :function(data) {
+                       paises = data.toString();
+                   }
+                });
+ 
+             var nuevoJson = $.parseJSON(paises);
+             
+             var comboBox = $('#comboBoxPais');
+                 
+             $.each(nuevoJson, function(i, obj) {
+                 var option = $('<option value="'+obj.code+'">'+obj.name+'</option>');
+                comboBox.append(option);                
+             });
+          
+             
+             $('#btnAgregarHobbie').on("click",function(){
+              
+                  if($('#inputModalHobbie').val()!=''){
+                   var tableBody = $('table tbody');       
+
+                   var row = $('<tr>');      
+
+                   var tdHobbie = $('<td>'+$('#inputModalHobbie').val()+'</td>');
+
+                   var tdDelete = $('<td>');     
+                   var linkDelete = $('<a><span class="glyphicon glyphicon-remove"></span></a>').on('click',function(){             
+                         var rowParent = $(this).parent().parent();
+
+                         rowParent.remove();
+
+                   });
+
+                  tdDelete.append(linkDelete);     
+
+                  row.append(tdHobbie);
+                  row.append(tdDelete);
+                  tableBody.append(row); 
+                  $('#inputModalHobbie').val('');
+                  $('#modalHobbie').modal('hide');                 
+               }
+             })
+             
+             
+         })
+          
+        </script>
+    
+    
+</html>

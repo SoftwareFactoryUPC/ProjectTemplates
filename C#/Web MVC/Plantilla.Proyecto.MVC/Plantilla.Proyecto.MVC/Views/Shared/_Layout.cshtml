@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CHEDESK - @ViewBag.Title</title>
+
+    <!-- Vendor CSS -->
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/bootstrap-theme.min.css")" rel="stylesheet">
+
+    @RenderSection("Styles", false)
+
+    <!-- CSS -->
+    <link href="@Url.Content("~/Content/css/styles.css")" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Plantilla de Proyecto", "Index", "Home", new { @class = "navbar-brand" })
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Ejemplo de Breadcrumbs -->
+    @if (IsSectionDefined("Breadcrumbs"))
+    {
+        <ol class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="@Url.Action("Dashboard","Home")">Home</a></li>
+            @RenderSection("Breadcrumbs", false)
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    }
+
+    <div class="container">
+
+        @*Para visualizar mensajes de confirmacion error*@
+        @if (TempData["FlashMessage"] != null)
+        {
+            <div class="card-body card-padding">
+                <div class="alert alert-@(TempData["FlashMessageType"])" role="alert">@TempData["FlashMessage"]</div>
+            </div>
+        }
+        @RenderBody()
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2015 Software Factory UPC.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    @RenderSection("Scripts", false)
+
+</body>
+
+
+<body class="toggled sw-toggled">
+    <header id="header">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="logo hidden-xs">
+                <strong>@Html.ActionLink("メール", "Index", "Home")</strong>
+            </li>
+
+            <li class="pull-right">
+                <ul class="top-menu">
+                    <li id="toggle-width">
+                        <div class="toggle-switch">
+                            <input id="tw-switch" type="checkbox" hidden="hidden">
+                            <label for="tw-switch" class="ts-helper"></label>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-message" href="#"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-notification" href="#"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="tm-settings" href="#"></a>
+                        <ul class="dropdown-menu dm-icon pull-right">
+                            <li>
+                                <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
+                            </li>
+                            <li>
+                                <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="md md-person"></i> Privacy Settings</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("LogOut","Home")"><i class="md md-settings"></i> Salir</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Top Search Content -->
+        <div id="top-search-wrap">
+            <input type="text">
+            <i id="top-search-close">&times;</i>
+        </div>
+    </header>
+
+    @if (IsSectionDefined("Breadcrumbs"))
+    {
+        <ol class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="@Url.Action("Dashboard","Home")">Home</a></li>
+            @RenderSection("Breadcrumbs", false)
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    }
+
+    <!--<section id="main">-->
+    <section id="">
+        <aside id="sidebar">
+            <div class="sidebar-inner">
+                <div class="si-inner">
+                    <div class="profile-menu">
+                        <a href="#">
+                            <div class="profile-pic">
+                                <img src="http://placehold.it/60" alt="">
+                            </div>
+
+                            <div class="profile-info">
+                                @Session.GetNombre() @Session.GetApellido()
+                                <i class="md md-arrow-drop-down"></i>
+                            </div>
+                        </a>
+
+                        <ul class="main-menu">
+                            <li>
+                                <a href="#"><i class="md md-person"></i> View Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="md md-settings-input-antenna"></i> Privacy Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="md md-settings"></i> Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="md md-history"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ul class="main-menu">
+                        @{Html.RenderPartial("_Sidebar");}
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <section id="content">
+            <div class="container">
+                @*Para visualizar mensajes de confirmacion error*@
+                @if (TempData["FlashMessage"] != null)
+                {
+                    <div class="card-body card-padding">
+                        <div class="alert alert-@(TempData["FlashMessageType"])" role="alert">@TempData["FlashMessage"]</div>
+                    </div>
+                }
+                @RenderBody()
+            </div>
+        </section>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

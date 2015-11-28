@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfXamlDemo.ActualizarEstudiantes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="Window_Loaded"
+        Title="ActualizarEstudiantes" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="25,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sexo" HorizontalAlignment="Left" Margin="25,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Promedio" HorizontalAlignment="Left" Margin="25,165,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="136,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtApellido" HorizontalAlignment="Left" Height="23" Margin="136,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>        
+        <RadioButton Name="rdbHombre" Content="Hombre" HorizontalAlignment="Left" Margin="136,120,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdbMujer" Content="Mujer" HorizontalAlignment="Left" Margin="209,120,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtPromedio" HorizontalAlignment="Left" Height="23" Margin="136,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="25,219,0,0" VerticalAlignment="Top" Width="75" Click="btnActualizar_Click"/>
+        <Button Content="Atras" HorizontalAlignment="Left" Margin="181,219,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

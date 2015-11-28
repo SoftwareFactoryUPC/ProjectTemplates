@@ -1,0 +1,1 @@
+D:\Andres\Descargas\Windows Phone 8.1 samples\Application data sample\C#\WindowsPhone\ApplicationDataSample.WindowsPhone.csproj;neutral

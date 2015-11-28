@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DemoJavaWeb">
+        <wb-resource deploy-path="/" source-path="/src/java/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java/main"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java/test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java/webapp"/>
+        <property name="context-root" value="DemoJavaWeb"/>
+        <property name="java-output-path" value="/DemoJavaWeb/build/classes"/>
+    </wb-module>
+</project-modules>

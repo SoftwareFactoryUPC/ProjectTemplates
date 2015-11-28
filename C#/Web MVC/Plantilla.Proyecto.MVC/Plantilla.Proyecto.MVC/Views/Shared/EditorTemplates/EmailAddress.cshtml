@@ -1,0 +1,9 @@
+﻿@model String
+
+<div class="form-group">
+    <div class="fg-line">
+        @Html.LabelFor(x => x, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x, new { @class = "form-control" })
+    </div>
+    @Html.ValidationMessageFor(x=>x)
+</div>
