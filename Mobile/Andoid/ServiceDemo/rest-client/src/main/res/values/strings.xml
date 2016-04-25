@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">rest-client</string>
+
+    <string name="uri_login">user</string>
+    <string name="uri_user_info">user?id=%1$s&amp;token=%2$s</string>
+
+</resources>
