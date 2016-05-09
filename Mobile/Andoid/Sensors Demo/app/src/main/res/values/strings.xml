@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Gyroscope Test</string>
+
+    <string name="title_sensor_accelerometer">Acelerómetro</string>
+    <string name="desc_sensor_accelerometer">Mide la aceleración en m/s2 de cada una de las fuerzas que son aplicadas sobre el dispositivos, en cada uno de los tres ejes físicos (X,Y,Z)</string>
+
+    <string name="title_sensor_gyroscope">Giroscopio</string>
+    <string name="desc_sensor_gyroscope">Mide el ratio de rotación en radianes alrededor de cada uno de los ejes (X,Y,Z)</string>
+
+    <string name="title_sensor_gravity">Gravedad</string>
+    <string name="desc_sensor_gravity">Es un sensor LÓGICO que mide la fuerza de gravedad aplicada sobre cada uno de los ejes. Hace uso del acelerómetro, y le aplica un filtro especial para sólo considerar el valor de la aceleración proveniente de la fuerza gravitacional</string>
+
+    <string name="title_sensor_shake">Shake detector</string>
+    <string name="desc_sensor_shake">Utilizaremos el ACELERÓMETRO para determinar cuando el usuario agita el celular</string>
+
+</resources>

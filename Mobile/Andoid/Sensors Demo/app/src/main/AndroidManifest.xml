@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.brunoaybar.sensorstest">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.brunoaybar.sensorstest.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.brunoaybar.sensorstest.GyroscopeActivity" />
+        <activity android:name="com.example.brunoaybar.sensorstest.AccelerometerActivity" />
+        <activity android:name="com.example.brunoaybar.sensorstest.GravityActivity" />
+        <activity android:name="com.example.brunoaybar.sensorstest.LightActivity" />
+        <activity android:name="com.example.brunoaybar.sensorstest.ShakeActivity"></activity>
+    </application>
+
+</manifest>
