@@ -1,0 +1,106 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.brunoaybar.sociallogin.LoginFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iviCover"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignTop="@+id/rlaCover"
+                android:background="#5240dc"
+                android:scaleType="centerCrop"
+                android:layout_alignBottom="@+id/rlaCover"/>
+
+            <LinearLayout
+                android:id="@+id/rlaCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/iviPhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/icon_avatar"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"/>
+
+                <TextView
+                    android:id="@+id/tviName"
+                    android:text="Bruno Aybar"
+                    android:enabled="false"
+                    style="@style/UserNameTextView"
+                    android:layout_below="@id/iviPhoto" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true"
+            android:layout_margin="16dp">
+            <TextView
+                android:id="@+id/tviMail"
+                android:enabled="false"
+                style="@style/InfoTextView"/>
+            <TextView
+                android:id="@+id/tviGender"
+                android:enabled="false"
+                style="@style/InfoTextView"/>
+            <TextView
+                android:id="@+id/tviId"
+                android:enabled="false"
+                style="@style/InfoTextView"/>
+            <TextView
+                android:id="@+id/tviToken"
+                android:enabled="false"
+                style="@style/InfoTextView"/>
+        </LinearLayout>
+
+
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/butFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:textAlignment="center"
+            android:layout_margin="12dp" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/butGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:textAlignment="center" />
+
+
+        <Button
+            android:id="@+id/butLogout"
+            android:text="Cerrar Sesión"
+            style="@style/RoundedEmptyStroke"
+            android:layout_margin="16dp" />
+    </LinearLayout>
+
+
+
+
+</ScrollView>

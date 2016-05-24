@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "323404006351",
+    "project_id": "social-demo-d6baf"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323404006351:android:5c1f7347e63499ef",
+        "android_client_info": {
+          "package_name": "com.example.brunoaybar.sociallogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323404006351-lnvtl6s281a72hqqb7u1debl51ufkhc3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brunoaybar.sociallogin",
+            "certificate_hash": "7CF4E25833FD02E71064CBC6657EFF4C398746D4"
+          }
+        },
+        {
+          "client_id": "323404006351-2u381u4uflo0ok25camukgc1kso28ufe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTrfu-n0N5Rp2GbdE6eQppEl7wPjDafsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
