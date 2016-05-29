@@ -1,0 +1,3 @@
+com\upc\proyectos\websockethome\model\Device.class
+com\upc\proyectos\websockethome\websocket\DeviceSessionHandler.class
+com\upc\proyectos\websockethome\websocket\DeviceWebSocketServer.class
