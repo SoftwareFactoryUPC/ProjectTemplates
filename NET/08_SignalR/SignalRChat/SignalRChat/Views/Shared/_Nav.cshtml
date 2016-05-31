@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link type="text/css" rel="stylesheet" href="~/Content/External/material-design-iconic-font.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/animate.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/layout.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/components.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/widgets.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/plugins.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/pages.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/bootstrap-extend.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/common.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/External/responsive.css">
+    <link type="text/css" id="themes" rel="stylesheet" href="#">
+</head>
+<body class="leftbar-view">
+    <!--Topbar Start Here-->
+    <header class="topbar clearfix">
+        <!--Top Search Bar Start Here-->
+        <div class="top-search-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="search-input-addon">
+                            <span class="addon-icon"><i class="zmdi zmdi-search"></i></span>
+                            <input type="text" class="form-control top-search-input" placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Top Search Bar End Here-->
+        <!--Topbar Left Branding With Logo Start-->
+        <div class="topbar-left pull-left">
+            <div class="clearfix">
+                <ul class="left-branding pull-left clickablemenu ttmenu dark-style menu-color-gradient">
+                    <li><span class="left-toggle-switch"><i class="zmdi zmdi-menu"></i></span></li>
+                    <li>
+                        <div class="logo">
+                            <a href="index.html" title="Admin Template">Chat</a>
+                        </div>
+                    </li>
+                </ul>
+                <!--Mobile Search and Rightbar Toggle-->
+                <ul class="branding-right pull-right">
+                    <li><a href="#" class="btn-mobile-search btn-top-search"><i class="zmdi zmdi-search"></i></a></li>
+                    <li><a href="#" class="btn-mobile-bar"><i class="zmdi zmdi-menu"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Topbar Left Branding With Logo End-->
+        <!--Topbar Right Start-->
+        <div class="topbar-right pull-right">
+            <div class="clearfix">
+                <!--Mobile View Leftbar Toggle-->
+                <ul class="left-bar-switch pull-left">
+                    <li><span class="left-toggle-switch"><i class="zmdi zmdi-menu"></i></span></li>
+                </ul>
+                <ul class="pull-right top-right-icons">
+
+                    <!--Invoca right nav-->
+                    <li><a href="#" class="right-toggle-switch"><i class="zmdi zmdi-format-align-left"></i><span class="more-noty"></span></a></li>
+
+                </ul>
+            </div>
+        </div>
+        <!--Topbar Right End-->
+    </header>
+    <!--Topbar End Here-->
+    <!--Leftbar Start Here-->
+    <aside class="leftbar material-leftbar">
+        <div class="left-aside-container">
+            <div class="user-profile-container">
+                <div class="user-profile clearfix">
+                    <div class="admin-user-thumb">
+                        <!--Imagen-->
+                        <img src="" alt="admin" id="final_displaypicture">
+                    </div>
+                    <div class="admin-user-info">
+                        <ul>
+                            <!--Datos de usuario-->
+                            <li><a href="#">Name: <strong id="final_displayname"></strong></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-accordion">
+                <li class="list-title">Software Factory</li>
+                <li>
+                    <a href="#"><i class="zmdi zmdi-view-web"></i><span class="list-label">Repositorio</span></a>
+                    <ul>
+                        <li><a href="https://github.com/SoftwareFactoryUPC">Github</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!--Leftbar End Here-->
+    <!--Page Container Start Here-->
+    <section>
+        <!--Contenido-->
+        @RenderBody()
+
+        <!--Footer Start Here -->
+        <footer class="footer-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-left">
+                            <span>© 2015 <a href="http://themeforest.net/user/westilian">westilian</a></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-right">
+                            <span class="footer-meta">Crafted with&nbsp;<i class="fa fa-heart"></i>&nbsp;by&nbsp;<a href="http://themeforest.net/user/westilian">westilian</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer End Here -->
+    </section>
+    <!--Page Container End Here-->
+    <!--Rightbar Start Here-->
+    <aside class="rightbar">
+        <div class="rightbar-container">
+
+            <ul class="nav nav-tabs material-tabs rightbar-tab" role="tablist">
+                <li class="active"><a href="#chat" aria-controls="message" role="tab" data-toggle="tab">Chat</a></li>
+            </ul>
+            <div class="tab-content">
+                <!--Chat-->
+                <div role="tabpanel" class="tab-pane active" id="chat">
+                    <div class="chat-user-container">
+
+
+
+                        <!--Usuarios online-->
+                        <h3 class="clearfix"><span class="pull-left">Members</span><span class="pull-right online-counter"><strong id="counter"></strong> Online</span></h3>
+
+                        <!--Lista de usuarios-->
+                        <ul id="list_of_users">
+                        </ul>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--Rightbar End Here-->
+    <script src="~/Scripts/External/lib/jquery.js"></script>
+    <script src="~/Scripts/External/lib/jquery-migrate.js"></script>
+    <script src="~/Scripts/External/lib/bootstrap.js"></script>
+    <script src="~/Scripts/External/lib/jquery.ui.js"></script>
+    <script src="~/Scripts/External/lib/jRespond.js"></script>
+    <script src="~/Scripts/External/lib/nav.accordion.js"></script>
+    <script src="~/Scripts/External/lib/hover.intent.js"></script>
+    <script src="~/Scripts/External/lib/hammerjs.js"></script>
+    <script src="~/Scripts/External/lib/jquery.hammer.js"></script>
+    <script src="~/Scripts/External/lib/jquery.fitvids.js"></script>
+    <script src="~/Scripts/External/lib/scrollup.js"></script>
+    <script src="~/Scripts/External/lib/smoothscroll.js"></script>
+    <script src="~/Scripts/External/lib/jquery.slimscroll.js"></script>
+    <script src="~/Scripts/External/lib/jquery.syntaxhighlighter.js"></script>
+    <script src="~/Scripts/External/lib/velocity.js"></script>
+    <script src="~/Scripts/External/lib/jquery-jvectormap.js"></script>
+    <script src="~/Scripts/External/lib/jquery-jvectormap-world-mill.js"></script>
+    <script src="~/Scripts/External/lib/jquery-jvectormap-us-aea.js"></script>
+    <script src="~/Scripts/External/lib/smart-resize.js"></script>
+    <!--iCheck-->
+    <script src="~/Scripts/External/lib/icheck.js"></script>
+    <script src="~/Scripts/External/lib/jquery.switch.button.js"></script>
+    <!--CHARTS-->
+    <script src="~/Scripts/External/lib/chart/sparkline/jquery.sparkline.js"></script>
+    <script src="~/Scripts/External/lib/chart/easypie/jquery.easypiechart.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/excanvas.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/curvedLines.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.time.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.stack.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.axislabels.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.resize.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.spline.js"></script>
+    <script src="~/Scripts/External/lib/chart/flot/jquery.flot.pie.min.js"></script>
+    <!--Forms-->
+    <script src="~/Scripts/External/lib/jquery.maskedinput.js"></script>
+    <script src="~/Scripts/External/lib/jquery.validate.js"></script>
+    <script src="~/Scripts/External/lib/jquery.form.js"></script>
+    <script src="~/Scripts/External/lib/j-forms.js"></script>
+    <script src="~/Scripts/External/lib/jquery.loadmask.js"></script>
+    <script src="~/Scripts/External/lib/vmap.init.js"></script>
+    <script src="~/Scripts/External/lib/theme-switcher.js"></script>
+    <script src="~/Scripts/External/apps.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
+

@@ -1,0 +1,6 @@
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\bin\WebService.dll.config
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\bin\WebService.dll
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\bin\WebService.pdb
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\obj\Debug\WebService.dll
+C:\Users\Victor\Documents\Software Factory\04_Web_Services\Demo\WebService\WebService\obj\Debug\WebService.pdb

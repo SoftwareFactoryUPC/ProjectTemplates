@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model WFC_Service_Client.ViewModels.CarViewModel
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br /><br />
+<table cellpadding="10" border="1">
+    <tr>
+        <td>Name</td>
+        <td>Company</td>
+        <td>Stock</td>
+        <td>Options</td>
+    </tr>
+    @foreach (var car in Model.list)
+    {
+        <tr>
+            <td>@car.name</td>
+            <td>@car.company</td>
+            <td>@car.stock</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = car.car_id }) |
+                @Html.ActionLink("Edit", "Edit", new { id = car.car_id })
+            </td>
+        </tr>
+
+    }
+
+</table>

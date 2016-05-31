@@ -1,0 +1,51 @@
+﻿<!--Indicamos lo que es retornado por el controller-->
+@model List<Ado_Net.Models.Car>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>ADO.NET</h1>
+<p>CRUD básico de una clase usando ADO.NET</p>
+
+<h2>Index</h2>
+<p>
+    <!--Link al action "Create" del mismo controller-->
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Company
+        </th>
+        <th>
+            Stock
+        </th>
+        <th></th>
+    </tr>
+
+    <!--Iteramos sobre el modelo-->
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stock)
+            </td>
+            <td>
+                <!--Para las opciones a ejecutar, mandamos el PK-->
+                @Html.ActionLink("Edit", "Edit", new { id = item.car_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.car_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.car_id })
+            </td>
+        </tr>
+    }
+
+</table>

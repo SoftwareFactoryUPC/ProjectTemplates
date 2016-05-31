@@ -1,0 +1,50 @@
+Cuando iniciemos el proyecto, lo primero que debemos hacer es crear la base de datos
+Para esto, el script se encuentra el github, a continuacion les paso el link
+En la ruta de utilitarios se encuentra el script
+Previo a inciar el video lo ejecute, y ya cuenta con las tablas 
+La demo trata sobre una web que permita registrar una persona y asignarla a su local de votacion
+En el proyecto en el archivo "Web.config" tendremos la cadena de conexion, en este caso
+referencia a Software_FactoryEntities, esto lo ejecute en mi pc, es por eso que los datos hacen referencia a 
+datos ajenos.
+data source=USUARIO-PC\SQLEXPRESS
+Estos datos deben borrarlos y re-generar la conexion. Se hace de la siguiente manera
+En la carpeta model, tengo las tablas mapeadas
+Pongo actualizar modelo desde base de datos, indican nueva conexion y se logean como si fuera sql
+Entonces ahora nos genera la conexion. Notese que se nombra Software_FactoryEntities como se tenia previamente.
+En caso no borren la conexion anterior se creara una nueva con el nombre de Software_FactoryEntities1 y el programa
+no podra funcionar dado en que hace referencia a Software_FactoryEntities no a Software_FactoryEntities1 
+Luego veremos eso
+Nos indica que se agrego la cadena de conexion
+Entonces ya tenemos el programa funcional. Ahora detallaremosun poco la estructura del proyecto.
+Dentro de AppStart /RouteConfig tenemos la primera accion que se desencadena al inciarel programa
+controller = "Home", action = "Index"
+Esta accion solo retorna una vista. La cual es la siguiente.
+Solo se agrego 2 opciones en el nav bar y se modifico el titulo por defecto
+Las opciones, son parte del layout, que es parte de la vista que se comparte entre las paginas
+
+
+Se agregaron las 2 nuevas opciones
+Mediante un @Html.ActionLink ejecutamos el action de un controller, en estos casos por defecto es la opcion index
+Dado que con entity framework creamos el crud de una tabla y por defecto nos genera las vistas de
+Create
+Delete
+Details
+Edit
+Index
+Previo a registrar votantes debemos tener locales de votacion registrados debido a que es el FK
+de la tabla personas
+En este caso, hubo un error dado que 
+dni varchar(8)
+En la base de datos soporta 8 caracteres. Pero la aplicacion no colapso, sino mostro un mensaje de error
+En este caso es una validacion de lo mas simple, un simple try catch. Se podria detallar
+mejor el error
+En la vista de create, cuento con un TempData que me mostrara un error en caso ocurra.
+Esto ocurre en el metodo POST
+Se trata de insertar en la bd
+En caso ocurra un error defino un TempData["Error"] Error como atributo del tempdata
+y almaceno el mensaje obtenido por el catch
+y vuelvo a la pagina de create
+Entonces el atributo error de tempdata no vuelve vacio, por lo cual muestro el mensaje en la vista
+Y ahora puedo registrar sin problemas.
+Esto sería el crud basico para unastablas usando entity framework
+La documentación detalla mucho mas al respecto y como generar el crud de las tablas.

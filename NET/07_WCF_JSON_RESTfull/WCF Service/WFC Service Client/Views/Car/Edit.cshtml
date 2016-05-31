@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+@model WFC_Service_Client.ViewModels.CarViewModel
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Car")) { 
+    <table cellpadding="10" border="1">
+        @Html.HiddenFor(model => model.car.car_id)
+        <tr>
+            <td>@Html.LabelFor(model => model.car.name)</td>
+            <td>@Html.TextBoxFor(model => model.car.name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.car.company)</td>
+            <td>@Html.TextBoxFor(model => model.car.company)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.car.stock)</td>
+            <td>@Html.TextBoxFor(model => model.car.stock)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+    </table>
+}
