@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "906546944330",
+    "firebase_url": "https://analytics-demo-bf883.firebaseio.com",
+    "project_id": "analytics-demo-bf883",
+    "storage_bucket": "analytics-demo-bf883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906546944330:android:bff40e61a2fe2c89",
+        "android_client_info": {
+          "package_name": "com.example.brunoaybar.analyticsdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906546944330-hv178i2d1qv7bl4idru0keb0k8eraqf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo9FiDXee7lu3uWjoKxX7XcU8giHU6LbQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-78811862-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
