@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2016 06:54:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.upc.proyectos.hibernatesqlserver.entidades.Products" table="Products" schema="dbo" catalog="NORTHWIND" optimistic-lock="version">
+        <id name="productId" type="int">
+            <column name="ProductID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categories" class="com.upc.proyectos.hibernatesqlserver.entidades.Categories" fetch="select">
+            <column name="CategoryID" />
+        </many-to-one>
+        <many-to-one name="suppliers" class="com.upc.proyectos.hibernatesqlserver.entidades.Suppliers" fetch="select">
+            <column name="SupplierID" />
+        </many-to-one>
+        <property name="productName" type="string">
+            <column name="ProductName" not-null="true" />
+        </property>
+        <property name="quantityPerUnit" type="string">
+            <column name="QuantityPerUnit" />
+        </property>
+        <property name="unitPrice" type="big_decimal">
+            <column name="UnitPrice" scale="4" />
+        </property>
+        <property name="unitsInStock" type="java.lang.Short">
+            <column name="UnitsInStock" />
+        </property>
+        <property name="unitsOnOrder" type="java.lang.Short">
+            <column name="UnitsOnOrder" />
+        </property>
+        <property name="reorderLevel" type="java.lang.Short">
+            <column name="ReorderLevel" />
+        </property>
+        <property name="discontinued" type="boolean">
+            <column name="Discontinued" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

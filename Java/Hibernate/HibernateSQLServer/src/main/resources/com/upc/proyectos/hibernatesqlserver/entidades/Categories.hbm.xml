@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2016 06:54:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.upc.proyectos.hibernatesqlserver.entidades.Categories" table="Categories" schema="dbo" catalog="NORTHWIND" optimistic-lock="version">
+        <id name="categoryId" type="int">
+            <column name="CategoryID" />
+            <generator class="identity" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="CategoryName" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="picture" type="binary">
+            <column name="Picture" />
+        </property>
+        <set name="productses" table="Products" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CategoryID" />
+            </key>
+            <one-to-many class="com.upc.proyectos.hibernatesqlserver.entidades.Products" />
+        </set>
+    </class>
+</hibernate-mapping>

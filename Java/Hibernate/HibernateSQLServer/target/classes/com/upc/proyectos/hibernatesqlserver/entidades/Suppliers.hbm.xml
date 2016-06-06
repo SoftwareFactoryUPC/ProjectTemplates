@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2016 06:54:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.upc.proyectos.hibernatesqlserver.entidades.Suppliers" table="Suppliers" schema="dbo" catalog="NORTHWIND" optimistic-lock="version">
+        <id name="supplierId" type="int">
+            <column name="SupplierID" />
+            <generator class="identity" />
+        </id>
+        <property name="companyName" type="string">
+            <column name="CompanyName" not-null="true" />
+        </property>
+        <property name="contactName" type="string">
+            <column name="ContactName" />
+        </property>
+        <property name="contactTitle" type="string">
+            <column name="ContactTitle" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" />
+        </property>
+        <property name="city" type="string">
+            <column name="City" />
+        </property>
+        <property name="region" type="string">
+            <column name="Region" />
+        </property>
+        <property name="postalCode" type="string">
+            <column name="PostalCode" />
+        </property>
+        <property name="country" type="string">
+            <column name="Country" />
+        </property>
+        <property name="phone" type="string">
+            <column name="Phone" />
+        </property>
+        <property name="fax" type="string">
+            <column name="Fax" />
+        </property>
+        <property name="homePage" type="string">
+            <column name="HomePage" />
+        </property>
+        <set name="productses" table="Products" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SupplierID" />
+            </key>
+            <one-to-many class="com.upc.proyectos.hibernatesqlserver.entidades.Products" />
+        </set>
+    </class>
+</hibernate-mapping>
