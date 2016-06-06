@@ -1,0 +1,148 @@
+﻿@model IEnumerable<Northwind_JQWidgets.Models.Employees>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_jQWidgets.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<ul id="list" data-role="listmenu">
+@foreach (var item in Model) {
+    <li>
+        <img src="https://i.ytimg.com/vi/mgyh9mAGm-4/maxresdefault.jpg" alt="" /><div>
+            @item.LastName @item.FirstName
+        </div>
+        <ul data-role="listmenu">
+            <li>
+                <div style="padding: 5px;" data-role="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <img width="50" height="50" src="https://i.ytimg.com/vi/mgyh9mAGm-4/maxresdefault.jpg" alt="" />
+                            </td>
+                            <td>
+                                <b>@item.LastName @item.FirstName </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Title
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Notes
+                            </td>
+                            <td>
+                                @item.Notes
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Birth Date
+                            </td>
+                            <td>
+                                @item.BirthDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Hire Date
+                            </td>
+                            <td>
+                                @item.HireDate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Home Phone
+                            </td>
+                            <td>
+                                @item.HomePhone
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Address
+                            </td>
+                            <td>
+                                @item.Address
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Postal Code
+                            </td>
+                            <td>
+                                @item.PostalCode
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                City
+                            </td>
+                            <td>
+                                @item.City
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Country
+                            </td>
+                            <td>
+                                @item.Country
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Options
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }) | 
+                                @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }) | 
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </li>
+}
+</ul>
+
+@section scripts {
+<link rel="stylesheet" href="~/Content/jqx.base.css" type="text/css" />
+<script type="text/javascript" src="~/Scripts/jqxcore.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxlistmenu.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxbuttons.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#list').jqxListMenu({autoSeparators: true, enableScrolling: false, showHeader: true, width: '600px', placeHolder: 'Find contact...' });
+        });
+</script>
+<style type="text/css">
+    #list img {
+        width: 50px;
+        height: 55px;
+    }
+
+    #list div {
+        margin-top: -35px;
+        margin-left: 80px;
+    }
+
+    .jqx-listmenu-item {
+        padding: 0px;
+        min-height: 57px;
+    }
+</style>
+}

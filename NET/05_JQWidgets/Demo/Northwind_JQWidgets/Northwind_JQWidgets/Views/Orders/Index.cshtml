@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "jQWidgets Data Grid";
+    Layout = "~/Views/Shared/_Layout_jQWidgets.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+    $(document).ready(function () {
+        // prepare the data
+        var source =
+        {
+            dataType: "json",
+            dataFields: [
+                { name: 'OrderID', type: 'number' },
+
+                { name: 'CustomerID', type: 'string' },
+                { name: 'EmployeeID', type: 'number' },
+                { name: 'OrderDate', type: 'date' },
+                { name: 'RequiredDate', type: 'date' },
+                { name: 'ShippedDate', type: 'date' },
+                { name: 'ShipVia', type: 'number' },
+                { name: 'Freight', type: 'number' },
+                { name: 'ShipName', type: 'string' },
+                { name: 'ShipAddress', type: 'string' },
+                { name: 'ShipCity', type: 'string' },
+                { name: 'ShipRegion', type: 'string' },
+                { name: 'ShipPostalCode', type: 'string' },
+                { name: 'ShipCountry', type: 'string' },
+            ],
+            id: 'OrderID',
+            url: '/Orders/GetOrders',
+            deleterow: function (rowid, commit) {
+                // synchronize with the server - send delete command
+                $.ajax({
+                    dataType: 'json',
+                    cache: false,
+                    url: '/Orders/Delete/5',
+                    type: "POST",
+                    success: function (data, status, xhr) {
+                        // delete command is executed.
+                        commit(true);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert(jqXHR.statusText);
+                        commit(false);
+                    }
+                });
+            }
+        };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        $("#jqxGrid").jqxGrid(
+        {
+            //Dimensiones
+            width: "100%",
+            height: "100%",
+            //Fuente de datos
+            source: dataAdapter,
+            //Estilo
+            theme: 'ui-start',
+            //Ordenar
+            sortable: true,
+            //Filtros
+            filterable: true,
+            showfilterrow: true,
+            //Multiples paginas
+            pageable: true,            
+            columns: [
+              //{ text: 'OrderID', dataField: 'OrderID', width: 150 },
+              { text: 'CustomerID', dataField: 'CustomerID', width: 150, filtertype: 'textbox' },
+              { text: 'EmployeeID', dataField: 'EmployeeID', width: 150 },
+              { text: 'OrderDate', dataField: 'OrderDate', cellsformat: 'd', width: 150, filtertype: 'date' },
+              { text: 'RequiredDate', dataField: 'RequiredDate', cellsformat: 'd', width: 150, filtertype: 'date' },
+              { text: 'ShippedDate', dataField: 'ShippedDate', cellsformat: 'd', width: 150, filtertype: 'date' },
+              { text: 'ShipVia', dataField: 'ShipVia', width: 150 },
+              { text: 'Freight', dataField: 'Freight', width: 150 },
+              { text: 'ShipName', dataField: 'ShipName', width: 150 },
+              { text: 'ShipAddress', dataField: 'ShipAddress', width: 150 },
+              { text: 'ShipCity', dataField: 'ShipCity', width: 150 },
+              { text: 'ShipRegion', dataField: 'ShipRegion', width: 150 },
+              { text: 'ShipPostalCode', dataField: 'ShipPostalCode', width: 150 },
+              { text: 'ShipCountry', dataField: 'ShipCountry', width: 150 },
+            ]
+        });
+
+        //Fin-----------------------------------
+
+        /*
+    $('#test_clic').click(function () {
+        var selectedrowindex = $("#jqxGrid").jqxGrid('getselectedrowindex');
+        $('#test').val(selectedrowindex);
+    })
+    */
+
+
+        //----------------------------------------------------------
+        //Botones de edicion y eliminacion
+        //----------------------------------------------------------
+        $("#editrowbutton").jqxButton();
+        $("#deleterowbutton").jqxButton();
+        // edit row.
+        $("#editrowbutton").bind('click', function () {
+            //Row seleccionado
+            var selectedrowindex = $("#jqxGrid").jqxGrid('getselectedrowindex');
+            if (selectedrowindex != -1) {
+                var id = $("#jqxGrid").jqxGrid('getcellvalue', selectedrowindex, "OrderID");
+                window.location = '/Orders/Edit/?id=' + id;
+            }
+            //var id = $("#grid").jqxGrid('getrowid', selectedrowindex);
+            //$("#grid").jqxGrid('deleterow', id);
+        });
+        // delete row.
+        $("#deleterowbutton").bind('click', function () {
+            //Row seleccionado
+            var selectedrowindex = $("#jqxGrid").jqxGrid('getselectedrowindex');
+            if (selectedrowindex != -1) {
+                var id = $("#jqxGrid").jqxGrid('getcellvalue', selectedrowindex, "OrderID");
+                window.location = '/Orders/Delete/?id=' + id;
+            }
+            //var id = $("#grid").jqxGrid('getrowid', selectedrowindex);
+            //$("#grid").jqxGrid('deleterow', id);
+        });
+
+        //----------------------------------------------------------
+        //Exportacion de archivos
+        //----------------------------------------------------------
+        $("#excelExport").jqxButton();
+        $("#xmlExport").jqxButton();
+        $("#csvExport").jqxButton();
+        $("#tsvExport").jqxButton();
+        $("#htmlExport").jqxButton();
+        $("#jsonExport").jqxButton();
+        $("#pdfExport").jqxButton();
+        $("#excelExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'xls', 'jqxGrid');
+        });
+        $("#xmlExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'xml', 'jqxGrid');
+        });
+        $("#csvExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'csv', 'jqxGrid');
+        });
+        $("#tsvExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'tsv', 'jqxGrid');
+        });
+        $("#htmlExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'html', 'jqxGrid');
+        });
+        $("#jsonExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'json', 'jqxGrid');
+        });
+        $("#pdfExport").click(function () {
+            $("#jqxGrid").jqxGrid('exportdata', 'pdf', 'jqxGrid');
+        });
+
+        //----------------------------------------------------------
+        //Imprimir
+        //----------------------------------------------------------
+        $("#print").jqxButton();
+
+        $("#print").click(function () {
+            var gridContent = $("#jqxGrid").jqxGrid('exportdata', 'html');
+            var newWindow = window.open('', '', 'width=800, height=500'),
+            document = newWindow.document.open(),
+            pageContent =
+                '<!DOCTYPE html>\n' +
+                '<html>\n' +
+                '<head>\n' +
+                '<meta charset="utf-8" />\n' +
+                '<title>jQWidgets Grid</title>\n' +
+                '</head>\n' +
+                '<body>\n' + gridContent + '\n</body>\n</html>';
+            document.write(pageContent);
+            document.close();
+            newWindow.print();
+        });
+    });
+
+</script>
+    
+}
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="jqxGrid"></div>
+<br />
+<div>
+    <div>Options<br />
+        <!--<input id="test_clic" type="button" value="Test" />
+        <input id="test" type="text"/>
+        -->
+        <input id="editrowbutton" type="button" value="Edit Selected Row" />
+        <input id="deleterowbutton" type="button" value="Delete Selected Row" />
+    </div>
+    <br />
+    <div>Exporta Data<br />
+        <input type="button" value="Export to Excel" id='excelExport' />
+        <input type="button" value="Export to XML" id='xmlExport' />
+        <br />
+        <input type="button" value="Export to CSV" id='csvExport' />
+        <input type="button" value="Export to TSV" id='tsvExport' />
+        <br />
+        <input type="button" value="Export to HTML" id='htmlExport' />
+        <input type="button" value="Export to JSON" id='jsonExport' />
+        <br />
+        <input type="button" value="Export to PDF" id='pdfExport' />
+    </div>
+    <br />
+    <div>Imprimir<br />
+        <input type="button" value="Print" id='print' />
+    </div>
+</div>
