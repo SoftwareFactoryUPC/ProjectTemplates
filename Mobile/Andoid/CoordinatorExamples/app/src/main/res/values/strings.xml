@@ -1,0 +1,99 @@
+<resources>
+	<string name="app_name">Coordinator Examples</string>
+
+	<string name="example_title">Software Factory</string>
+	<string name="example_subtitle">Usando: app:layout_collapseMode="pin"</string>
+
+	<string name="text_header">Text</string>
+	<string name="flexible_title">Márgenes espaciosos</string>
+
+	<string name="header_about">Descripción</string>
+	<string name="header_examples">Aplicaciones</string>
+
+	<string name="item_flexible_space_example">Vista con Header</string>
+	<string name="item_simple_coordinator_example">Vista Scrolleable</string>
+	<string name="item_googleio_example">Vista Detalle</string>
+	<string name="item_materialup_example">Vista Perfil</string>
+
+	<string name="lorem">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
+		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+		in elementum arcu ultricies nec.Morbi tincidunt nisl lacinia, placerat nisi eget, luctus tortor.
+		Morbi efficitur dictum leo, sit amet volutpat lorem sodales nec. Quisque et erat et turpis fringilla condimentum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.
+		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.
+		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,
+		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.
+		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.
+		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit,
+		risus libero rutrum justo, sed tempus augue tellus eget est. Curabitur convallis augue nisl,
+		id efficitur urna posuere faucibus. Ut sed egestas nulla, eu finibus metus. Nunc a arcu ante.
+		Aenean ullamcorper dolor non condimentum congue. Aenean mauris nunc, pellentesque at placerat vitae,
+		aliquet quis orci. Curabitur maximus augue ut bibendum sagittis.
+	</string>
+
+	<string name="lorem_simple">
+		Esta vista tiene una imagen superior que tiene el efecto <b>parallax</b>, por lo cual sube
+		a una velocidad distinta al resto del contenido, lo cual hace que se vea más interactivo.\n\n
+
+		Al scrollear, las vistas se contraen porque están dentro de un <b>CollapsingToolbarLayout</b>, el
+		cual se encarga de collapsar automaticamente la vista cuando se scrollea hacia abajo. Sin embargo, el
+		toolbar se quedará fijo porque tiene la propiedad <b>app:layout_collapseMode="pin"</b>\n\n
+
+		Además, el FAB desaparece automáticamente porque este está <b>anclado</b> al collapsing toolbar,
+		por lo cual este, al contraerse, hace que el FAB también se esconda. Esto está incorporado dentro del
+		behavior de scrollving asignado al scrollview\n\n
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.
+		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.
+		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,
+		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.
+		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.
+		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit.
+	</string>
+
+	<string name="lorem_pinned_toolbar">
+		En esta vista, a la barra superior se le setea la propiedad <i>app:layout_collapseMode="pin"</i>, para
+		que cuando se scrollee hacia abajo, esa vista se quede pegada a la parte superior.\n\n
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
+		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+		in elementum arcu ultricies nec.Morbi tincidunt nisl lacinia, placerat nisi eget, luctus tortor.
+		Morbi efficitur dictum leo, sit amet volutpat lorem sodales nec. Quisque et erat et turpis fringilla condimentum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.
+		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.
+		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,
+		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.
+		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.
+		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit.
+	</string>
+
+	<string name="lorem_pinned_flexible_place">
+		Si utilizamos un  CollapsingToolbarLayout, podemos hacer que el título se agrande y achique a medida que se scrollea.
+		Asimismo, podemos manager los márgenes inferiores y superiores como querramos para darle un efecto de transposición de
+		elementos, y sin tener que escribir una linea de código Java.\n\n
+		En esta vista, a la barra superior se le setea la propiedad <i>app:layout_collapseMode="pin"</i>, para
+		que cuando se scrollee hacia abajo, esa vista se quede pegada a la parte superior.\n\n
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
+		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+		in elementum arcu ultricies nec.Morbi tincidunt nisl lacinia, placerat nisi eget, luctus tortor.
+		Morbi efficitur dictum leo, sit amet volutpat lorem sodales nec. Quisque et erat et turpis fringilla condimentum.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.
+		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.
+		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,
+		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.
+		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.
+		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit.
+	</string>
+
+	<string name="about">
+		En esta demo, podrás ver las diferentes aplicaciones del CoordinatorLayout dentro de una aplicación.\n\n
+		<b>CoordinatorLayout</b> es un ViewGroup que se encarga de coordinar el movimiento entre los
+		componentes que se encuentran dentro de él.\n\n Cuenta con una variedad de <b>behaviors (comportamientos)</b>
+		por defecto, los cuales ya tienen implementadas lógicas que corresponden a animaciones sugeridas
+		dentro de las guías de diseño de Material Design. Sin embargo, podemos llevarlo un poco más allá y extender
+		estos comportamientos a nuestro gusto!
+	</string>
+	<string name="swype.help">The \'Swipe to dismiss\' behavior allows you to easily add the \'Swipe to dismiss\' functionality in a View inside a CoordinatorLayout</string>
+</resources>
