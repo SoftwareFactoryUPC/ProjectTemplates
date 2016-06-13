@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Index</h2>
+<a href="http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxnotification/index.htm#demos/jqxnotification/defaultfunctionality.htm">Info</a>
+
+<p>Dashboard del administrador</p>
+
+<!--Notifications-->
+<div id="messageNotification">
+    <div>
+        Welcome to our website.
+    </div>
+</div>
+<div id="timeNotification">
+    <div>Current time: <span id="currentTime" style="font-weight: bold;"></span>.</div>
+</div>
+
+@section scripts{
+<script type="text/javascript" src="~/Scripts/jqxcore.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxnotification.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxbuttons.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#messageNotification").jqxNotification({
+                width: 250, position: "left", opacity: 0.9,
+                autoOpen: false, animationOpenDelay: 800, autoClose: true, autoCloseDelay: 3000, template: "info"
+            });
+            $("#timeNotification").jqxNotification({
+                width: 250, position: "left", opacity: 0.9,
+                autoOpen: false, animationOpenDelay: 800, autoClose: true, autoCloseDelay: 3000, template: "time"
+            });
+            //Notificacion de saludo
+            $("#messageNotification").jqxNotification("open");
+            
+            //Notificacion de tiempo
+            var date = new Date();
+            var minutes = date.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            var seconds = date.getSeconds();
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            $("#currentTime").text(date.getHours() + ":" + minutes + ":" + seconds);
+            $("#timeNotification").jqxNotification("open");
+        });
+</script>
+}

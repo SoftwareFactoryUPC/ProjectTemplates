@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxscrollview/index.htm#demos/jqxscrollview/defaultfunctionality.htm">Info</a>
+
+
+<div id="photoGallery">
+    <div><div class="photo" style="background-image: url('https://i.ytimg.com/vi/Y3Vm7_1biSo/hqdefault.jpg')"></div></div>
+    <div><div class="photo" style="background-image: url('http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg?1399003306')"></div></div>
+    <div><div class="photo" style="background-image: url('http://images.en.yibada.com/data/thumbs/full/106826/685/0/0/0/dragon-ball-super-episode-47-recap-and-review-two-important-characters-die-black-goku-is-evil-as-hell.jpg')"></div></div>
+</div>
+
+@section scripts{
+<script type="text/javascript" src="~/Scripts/jqxcore.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxscrollview.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxbuttons.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $('#photoGallery').jqxScrollView({ width: 600, height: 450, buttonsOffset: [0, 0] });
+            $('#photoGallery').jqxScrollView({ slideShow: true });
+        });
+</script>
+<style type="text/css">
+    .photo {
+        width: 600px;
+        height: 450px;
+        background-color: #000;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+}

@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Index</h2>
+<a href="http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxchart/index.htm">Info</a>
+
+<div id='chartContainerOrdersQ' style="width:850px; height:500px;">
+</div>
+<div id='chartContainerOrdersC' style="width:850px; height:500px;">
+</div>
+<div>Select a Year</div>
+<div id="jqxComboBox"></div><br />
+<div id='chartContainerOrdersPeriodQ' style="width:850px; height:500px;">
+</div>
+
+@section scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    // prepare the data
+    var source =
+    {
+        dataType: "json",
+        dataFields: [
+            { name: 'ShipCountry', type: 'string' },
+            { name: 'q_96', type: 'number' },
+            { name: 'q_97', type: 'number' },
+            { name: 'q_98', type: 'number' }
+        ],
+        url: '/AdminSales/GetOrders'
+        
+    };
+    var dataAdapter = new $.jqx.dataAdapter(source, {
+        beforeLoadComplete: function (records) {
+            return records;
+        }
+    });
+    var settings = {
+        title: "Shipments",
+        description: "Quantity",
+        showLegend: true,
+        legendLayout: { left: 700, top: 170, width: 300, height: 200, flow: 'vertical' },
+        enableAnimations: true,
+        padding: { left: 20, top: 5, right: 20, bottom: 5 },
+        source: dataAdapter,
+        xAxis:
+            {
+                dataField: 'ShipCountry',
+                gridLines: { visible: true },
+                flip: false
+            },
+        colorScheme: 'scheme01',
+        seriesGroups:
+            [
+                {
+                    type: 'column',
+                    columnsGapPercent: 50,
+                    series: [
+                            { dataField: 'q_96', displayText: '1996' },
+                            { dataField: 'q_97', displayText: '1997' },
+                            { dataField: 'q_98', displayText: '1998' }
+                    ]
+                }
+            ]
+    };
+    // setup the chart
+    $('#chartContainerOrdersQ').jqxChart(settings);
+
+
+    // prepare the data
+    var source =
+    {
+        dataType: "json",
+        dataFields: [
+            { name: 'ShipCountry', type: 'string' },
+            { name: 'cash_96', type: 'number' },
+            { name: 'cash_97', type: 'number' },
+            { name: 'cash_98', type: 'number' }
+        ],
+        url: '/AdminSales/GetOrders'
+    };
+    var dataAdapter = new $.jqx.dataAdapter(source, {
+        beforeLoadComplete: function (records) {
+            return records;
+        }
+    });
+    var settings = {
+        title: "Shipments",
+        description: "Cash",
+        showLegend: true,
+        legendLayout: { left: 700, top: 170, width: 300, height: 200, flow: 'vertical' },
+        enableAnimations: true,
+        padding: { left: 20, top: 5, right: 20, bottom: 5 },
+        source: dataAdapter,
+        xAxis:
+            {
+                dataField: 'ShipCountry',
+                gridLines: { visible: true },
+                flip: false
+            },
+        colorScheme: 'scheme02',
+        seriesGroups:
+            [
+                {
+                    type: 'column',
+                    columnsGapPercent: 50,
+                    series: [
+                            { dataField: 'cash_96', displayText: '1996' },
+                            { dataField: 'cash_97', displayText: '1997' },
+                            { dataField: 'cash_98', displayText: '1998' }
+                    ]
+                }
+            ]
+    };
+        // setup the chart
+    $('#chartContainerOrdersC').jqxChart(settings);
+
+    var source = [
+                    "1996",
+                    "1997",
+                    "1998"
+    ]
+        // Create a jqxComboBox
+    $("#jqxComboBox").jqxComboBox({ selectedIndex: 1, template: "primary", source: source, width: '200px', height: '25px' });
+
+    $("#jqxComboBox").on('select', function (event) {
+        if (event.args) {
+            var item = event.args.item;
+            if (item) {
+                // prepare the data
+                var source =
+                {
+                    dataType: "json",
+                    dataFields: [
+                        { name: 'full_date', type: 'date' },
+                        { name: 'q', type: 'number' },
+                        { name: 'cash', type: 'number' }
+                    ],
+                    //Pasar parametros
+                    //http://stackoverflow.com/questions/15576548/how-to-pass-parameters-in-get-requests-with-jquery
+                    data: { filter: item.value },
+                    type: "get",
+                    url: '/AdminSales/GetOrdersPerPeriod'
+                };
+                var dataAdapter = new $.jqx.dataAdapter(source, {
+                    beforeLoadComplete: function (records) {
+                        return records;
+                    }
+                });
+                var settings = {
+                    title: "Shipments",
+                    description: "Quantity",
+                    showLegend: true,
+                    legendLayout: { left: 700, top: 170, width: 300, height: 200, flow: 'vertical' },
+                    enableAnimations: true,
+                    padding: { left: 20, top: 5, right: 20, bottom: 5 },
+                    source: dataAdapter,
+
+                    xAxis:
+                            {
+                                dataField: 'full_date',
+                                type: 'date',
+                                baseUnit: 'month',
+                                valuesOnTicks: true,
+                                tickMarks: {
+                                    visible: true,
+                                    interval: 1,
+                                    color: '#BCBCBC'
+                                },
+                                unitInterval: 1,
+                                gridLines: {
+                                    visible: true,
+                                    interval: 3,
+                                    color: '#BCBCBC'
+                                },
+                                labels: {
+                                    angle: -45,
+                                    rotationPoint: 'topright',
+                                    offset: { x: 0, y: -25 }
+                                }
+                            },
+                    valueAxis:
+                    {
+                        visible: true,
+                        title: { text: 'Quantity (Q)<br>' },
+                        tickMarks: { color: '#BCBCBC' }
+                    },
+                    colorScheme: 'scheme04',
+                    seriesGroups:
+                        [
+                            {
+                                type: 'line',
+                                series: [
+                                        { dataField: 'q', displayText: 'Quantity' }
+                                ]
+                            }
+                        ]
+                };
+                // setup the chart
+                $('#chartContainerOrdersPeriodQ').jqxChart(settings);
+            }
+        }
+    });
+});
+</script>
+}

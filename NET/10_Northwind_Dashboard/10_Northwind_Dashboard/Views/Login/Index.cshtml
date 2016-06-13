@@ -1,0 +1,53 @@
+﻿@model _10_Northwind_Dashboard.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<div class="log">
+    <div class="content1">
+        <h2>Sign Up</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control", @name = "userid", @placeholder="Username" } })
+                @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
+
+                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", @name = "usrtel", @placeholder = "Phone" } })
+                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @name = "email", @placeholder = "Email" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+
+                @Html.EditorFor(model => model.pass, new { htmlAttributes = new { @class = "form-control", @name = "psw", @placeholder = "Password", @type = "password" } })
+                @Html.ValidationMessageFor(model => model.pass, "", new { @class = "text-danger" })
+            </div>
+            <input type="submit" class="register" value="Register">
+        </div>
+        }
+    </div>
+    <div class="content2">
+        <h2>Welcome to Northwind</h2>
+        <br />
+        @Html.ActionLink("Sign In", "Sign_In", "Login", null, new { @class = "register" })
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<div class="footer">
+    <p>© 2016 Unique Login Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+</div>
+
+@section scripts{
+<!-- font files  -->
+<link href='//fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+<!-- /font files  -->
+<!-- css files -->
+<link href="~/Content/css_login/style.css" rel='stylesheet' type='text/css' media="all" />
+<!-- /css files -->
+}

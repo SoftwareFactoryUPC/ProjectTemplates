@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+<a href="http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxwindow/index.htm#demos/jqxwindow/defaultfunctionality.htm">Info</a>
+
+<div id="jqxWidget">
+    <div style="float: left;">
+        <div>
+            <input type="button" value="Open" id="showWindowButton" />
+            <input type="button" value="Close" id="hideWindowButton" style="margin-left: 5px" />
+        </div>
+    </div>
+    <div style="width: 100%; height: 650px; margin-top: 50px;" id="mainDemoContainer">
+        <div id="window">
+            <div id="windowHeader">
+                <span>
+                    <img src="http://umbra.nascom.nasa.gov/images/latest_aia_171_icon.gif" alt="" style="margin-right: 15px" />NorthWind
+                </span>
+            </div>
+            <div style="overflow: hidden;" id="windowContent">
+                <div id="tab">
+                    <ul style="margin-left: 30px;">
+                        <li>Bienvenido</li>
+                        <li>Compre</li>
+                        <li>Califique los productos</li>
+                        <li>Contactenos</li>
+                    </ul>
+                    <div>
+                        <img src="http://umbra.nascom.nasa.gov/images/latest_aia_171_icon.gif" style="float: left; margin: 10px;" alt="" />
+                        Bienvenido a la tienda virtual creada en base a jQWidgets
+                    </div>
+                    <div>
+                        <img src="http://umbra.nascom.nasa.gov/images/latest_aia_171_icon.gif" style="float: left; margin: 10px;" alt="" />
+                        Realice compras de los productos que se ofrecen en la tienda Northwind.
+                    </div>
+                    <div>
+                        <img src="http://umbra.nascom.nasa.gov/images/latest_aia_171_icon.gif" style="float: left; margin: 10px;" alt="" />
+                        Califique los productos para poder conocer sus gustos y mejorar.
+                    </div>
+                    <div>
+                        <img src="http://umbra.nascom.nasa.gov/images/latest_aia_171_icon.gif" style="float: left; margin: 10px;" alt="" />
+                        Contactenos al: 666-999-333
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script type="text/javascript" src="~/Scripts/jqxcore.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxwindow.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxbuttons.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxscrollbar.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxpanel.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxtabs.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxcheckbox.js"></script>
+<script type="text/javascript">
+        var basicDemo = (function () {
+            //Adding event listeners
+            function _addEventListeners() {
+                $('#showWindowButton').click(function () {
+                    $('#window').jqxWindow('open');
+                    //Cambiar las dimensiones de la ventana emergente
+                    $('#window').jqxWindow('resizable', true);
+                    //Poder arrastrar la ventana emergente
+                    $('#window').jqxWindow('draggable', true);
+
+                });
+                $('#hideWindowButton').click(function () {
+                    $('#window').jqxWindow('close');
+                });
+            };
+            //Creating all page elements which are jqxWidgets
+            function _createElements() {
+                $('#showWindowButton').jqxButton({ width: '70px' });
+                $('#hideWindowButton').jqxButton({ width: '65px' });
+            };
+            //Creating the demo window
+            function _createWindow() {
+                var jqxWidget = $('#jqxWidget');
+                var offset = jqxWidget.offset();
+                $('#window').jqxWindow({
+                    position: { x: offset.left + 50, y: offset.top + 50} ,
+                    showCollapseButton: true, maxHeight: 400, maxWidth: 700, minHeight: 200, minWidth: 200, height: 300, width: 500,
+                    initContent: function () {
+                        $('#tab').jqxTabs({ height: '100%', width:  '100%' });
+                        $('#window').jqxWindow('focus');
+                    }
+                });
+            };
+            return {
+                config: {
+                    dragArea: null
+                },
+                init: function () {
+                    //Creating all jqxWindgets except the window
+                    _createElements();
+                    //Attaching event listeners
+                    _addEventListeners();
+                    //Adding jqxWindow
+                    _createWindow();
+                }
+            };
+        } ());
+        $(document).ready(function () {
+            //Initializing the demo
+            basicDemo.init();
+        });
+</script>
+}

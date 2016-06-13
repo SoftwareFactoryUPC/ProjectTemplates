@@ -1,0 +1,80 @@
+﻿@model IEnumerable<_10_Northwind_Dashboard.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Index</h2>
+<a href="http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm#demos/jqxgrid/defaultfunctionality.htm">Info</a>
+
+<div id="jqxGrid"></div>
+@section scripts {
+    <script type="text/javascript">
+    $(document).ready(function () {
+        // prepare the data
+        var source =
+        {
+            dataType: "json",
+            dataFields: [
+                { name: 'CategoryID', type: 'number' },
+                { name: 'CategoryName', type: 'string' },
+                { name: 'Discount', type: 'number' },
+                { name: 'Employee', type: 'string' },
+                { name: 'OrderDate', type: 'date' },
+                { name: 'OrderID', type: 'number' },
+                { name: 'ProductID', type: 'number' },
+                { name: 'ProductName', type: 'string' },
+                { name: 'Quantity', type: 'numer' },
+                { name: 'ShipCity', type: 'string' },
+                { name: 'ShipCountry', type: 'string' },
+                { name: 'ShippedDate', type: 'date' },
+                { name: 'ShipPostalCode', type: 'string' },
+                { name: 'Total', type: 'number' },
+                { name: 'UnitPrice', type: 'number' }
+            ],
+            id: 'OrderID',
+            url: '/AdminOrders/GetOrders'
+        };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        $("#jqxGrid").jqxGrid(
+        {
+            //Dimensiones
+            width: "100%",
+            height: "100%",
+            //Fuente de datos
+            source: dataAdapter,
+            //Estilo
+            theme: 'ui-start',
+            //Ordenar
+            sortable: true,
+            //Filtros
+            filterable: true,
+            showfilterrow: true,
+            //Multiples paginas
+            pageable: true,            
+            columns: [
+              { text: 'OrderID', dataField: 'OrderID', width: 150 },
+              { text: 'OrderDate', dataField: 'OrderDate', cellsformat: 'd', width: 150, filtertype: 'date' },
+              { text: 'ShipCountry', dataField: 'ShipCountry', width: 150 },
+              { text: 'ShipCity', dataField: 'ShipCity', width: 150 },
+              { text: 'ShipPostalCode', dataField: 'ShipPostalCode', width: 150 },
+              { text: 'ShippedDate', dataField: 'ShippedDate', cellsformat: 'd', width: 150, filtertype: 'date' },
+              { text: 'ProductName', dataField: 'ProductName', width: 150 },
+              { text: 'CategoryName', dataField: 'CategoryName', width: 150 },
+              { text: 'UnitPrice', dataField: 'UnitPrice', width: 150 },
+              { text: 'Quantity', dataField: 'Quantity', width: 150 },
+              { text: 'Discount', dataField: 'Discount', width: 150 },
+              { text: 'Total', dataField: 'Total', width: 150 },
+              { text: 'Employee', dataField: 'Employee', width: 150 }
+              
+            ]
+        });
+
+        //Fin-----------------------------------
+
+    });
+
+    </script>
+    
+}

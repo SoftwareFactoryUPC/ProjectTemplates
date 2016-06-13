@@ -1,0 +1,85 @@
+﻿@model _10_Northwind_Dashboard.Models.Employees
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div id='jqxWidget'>
+    <div id='jqxTabs'>
+        <ul>
+            <li style="margin-left: 30px;">All sales (Q)</li>
+            <li>Extra 1</li>
+            <li>Extra 2</li>
+        </ul>
+        <!--1-->
+        <div style="width:850px; height:500px;" id="chartContainer1"></div>
+        <!--2-->
+        <div>
+            More Examples
+        </div>
+        <!--3-->
+        <div>
+            Bye
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+<script type="text/javascript" src="~/Scripts/jqxcore.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxtabs.js"></script>
+<script type="text/javascript" src="~/Scripts/jqxcheckbox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Create jqxTabs.
+        $('#jqxTabs').jqxTabs({ width: '90%', height: '100%', position: 'top' });
+
+
+
+        // prepare the data
+        var source =
+        {
+            dataType: "json",
+            dataFields: [
+                { name: 'anio', type: 'number' },
+                { name: 'cash', type: 'number' },
+                { name: 'q', type: 'number' }
+            ],
+            data: { filter:@Model.EmployeeID},
+                type: "get",
+                url: '/AdminEmployees/GetEmployees'
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source, {
+                beforeLoadComplete: function (records) {
+                    return records;
+                }
+            });
+            var settings = {
+                title: "Sales",
+                description: "Quantity",
+                showLegend: true,
+                legendLayout: { left: 700, top: 170, width: 300, height: 200, flow: 'vertical' },
+                enableAnimations: true,
+                padding: { left: 5, top: 5, right: 5, bottom: 5 },
+                source: dataAdapter,
+
+                colorScheme: 'scheme02',
+                seriesGroups:
+                    [
+                        {
+                            type: 'pie',
+                            series: [
+                                    { radius: 150, innerRadius: 80, dataField: 'q', displayText: 'anio' }
+                            ]
+                        }
+                    ]
+            };
+            // setup the chart
+            $('#chartContainer1').jqxChart(settings);
+
+        });
+</script>
+}
