@@ -86,7 +86,7 @@ $(document).ready(function () {
       $.ajax({
         url: $("#base_url").val()+"panel/ajax/update_estado_grupo",
         type: "POST",
-        data: "csrf_token_infobox="+$('input[name=csrf_token_infobox]').val()+"&id_grupo="+id_grupo+"&estado="+estado,
+        data: "csrf_token_softwarefactory="+$('input[name=csrf_token_softwarefactory]').val()+"&id_grupo="+id_grupo+"&estado="+estado,
         dataType: "json"
       }).done( function(res){
 
@@ -445,7 +445,7 @@ $(document).ready(function () {
 
   $("#galeria_producto li a").live("click",function(){
     var a = $(this);
-    $.post($("#base_url").val()+'panel/ajax/eliminar_galeria/home',{id:a.attr("rel"), csrf_token_infobox:$('input[name=csrf_token_infobox]').val()},function(data){
+    $.post($("#base_url").val()+'panel/ajax/eliminar_galeria/home',{id:a.attr("rel"), csrf_token_softwarefactory:$('input[name=csrf_token_softwarefactory]').val()},function(data){
       if(data==0){
         a.parent().animate({opacity: 0}, 1000);
         a.parent().effect("transfer", { to: $('#upload_galeria') }, 1000, function(){ a.parent().remove(); });

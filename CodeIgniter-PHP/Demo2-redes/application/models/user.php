@@ -34,7 +34,12 @@ class User extends CI_Model
 				$id_usuario	  = $this->db->insert_id();
 
 				$this->db->trans_complete();
-				return 0;
+
+			$query = $this->db->query("SELECT u.email, u.firstName,u.identifier, u.lastName, u.photoURL, u.displayName
+			FROM  user u
+			WHERE u.identifier = ?", array($token));
+
+				return $query->result_array();
 			}
 			else
 			{

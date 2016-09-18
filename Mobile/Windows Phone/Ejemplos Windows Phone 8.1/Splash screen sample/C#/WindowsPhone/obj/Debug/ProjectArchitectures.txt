@@ -1,1 +1,0 @@
-D:\Andres\Descargas\Windows Phone 8.1 samples\Splash screen sample\C#\WindowsPhone\SplashScreenSample.WindowsPhone.csproj;neutral
