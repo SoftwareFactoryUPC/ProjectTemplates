@@ -43,9 +43,10 @@ class HAuth extends CI_Controller {
 
 					$datos=$this->usuario->Agregar($user_profile->displayName, $user_profile->email,$user_profile->firstName,$user_profile->identifier,$user_profile->lastName,$user_profile->photoURL);
 
-					
-					$data['user_profile']=$datos[0];
-					
+					if($datos!=0)
+					{
+						$data['user_profile']=$datos[0];
+					}
 
 					$this->load->view('hauth/done',$data);
 				}

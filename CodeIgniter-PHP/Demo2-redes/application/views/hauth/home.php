@@ -90,7 +90,7 @@
                         <span class="fa fa-twitter"></span> Sign in with twitter
                       </a>
                       <a class="btn btn-block btn-social btn-lg btn-github" href="<?php echo base_url() ?>hauth/login/Github">
-                        <span class="fa fa-github"></span> Sign in with github
+                        <span class="fa fa-github"></span> Sign in with facebook
                       </a>
                       <a class="btn btn-block btn-social btn-lg btn-tumblr" href="<?php echo base_url() ?>hauth/login/Tumblr">
                         <span class="fa fa-tumblr"></span> Sign in with tumblr

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Software_FactoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="person_id" />
+    </Key>
+    <Property Name="person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dni" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="polling_place_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="polling_place" Relationship="Self.FK__person__polling___239E4DCF" FromRole="person" ToRole="polling_place" />
+  </EntityType>
+  <EntityType Name="polling_place">
+    <Key>
+      <PropertyRef Name="polling_place_id" />
+    </Key>
+    <Property Name="polling_place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="person" Relationship="Self.FK__person__polling___239E4DCF" FromRole="polling_place" ToRole="person" />
+  </EntityType>
+  <Association Name="FK__person__polling___239E4DCF">
+    <End Role="polling_place" Type="Self.polling_place" Multiplicity="1" />
+    <End Role="person" Type="Self.person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="polling_place">
+        <PropertyRef Name="polling_place_id" />
+      </Principal>
+      <Dependent Role="person">
+        <PropertyRef Name="polling_place_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Software_FactoryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="person" EntityType="Self.person" />
+    <EntitySet Name="polling_place" EntityType="Self.polling_place" />
+    <AssociationSet Name="FK__person__polling___239E4DCF" Association="Self.FK__person__polling___239E4DCF">
+      <End Role="polling_place" EntitySet="polling_place" />
+      <End Role="person" EntitySet="person" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

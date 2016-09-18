@@ -25,7 +25,7 @@
 					<td><?php echo $value['no_empresa'] ?></td>
 					<td class="center">
 						<a href="<?php echo base_url() ?>panel/empresa/editar/<?php echo $value['id_empresa'] ?>" title="Editar Registro" class="editar tooltip"></a>
-						<a href="<?php echo base_url() ?>panel/empresa/eliminar/<?php echo $value['id_empresa'] ?>" title="Eliminar Registro" class="eliminar tooltip" ></a>
+						<a href="javascript:;" title="Eliminar Registro" class="eliminar tooltip" onclick="confirmar_eliminacion('<?php echo base_url() ?>panel/empresa/eliminar/<?php echo $value['id_empresa'] ?>')"></a>
 					</td>
 				</tr>
 				<?php }}else{ ?>
