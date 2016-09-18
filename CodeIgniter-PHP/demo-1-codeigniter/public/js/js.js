@@ -153,7 +153,7 @@ $(document).ready(function () {
             $.ajax({
               url: $("#base_url").val()+"ajax/get_detalle",
               type: "POST",
-              data: "csrf_token_infobox="+$('input[name=csrf_token_infobox]').val()+"&id="+obj.attr("rel")+"&tabla=solucion",
+              data: "csrf_token_softwarefactory="+$('input[name=csrf_token_softwarefactory]').val()+"&id="+obj.attr("rel")+"&tabla=solucion",
               dataType: "json"
             }).done( function(res){
 
@@ -209,54 +209,7 @@ $(document).ready(function () {
     })
 
 
-    /*$(".a_productos").click( function(){
-
-      var obj = $(this);
-      
-      $(".detalle_productos").css("display","inline-block");
-
-      $(".detalle_productos").find('img').eq(0).attr("src",'');
-      $(".detalle_productos").find('h3').eq(0).text('');
-      $(".detalle_productos").find('p').eq(0).html('');
-      $(".a_regresar_productos").css("opacity",0);
-
-      $(".detalle_productos").animate({
-        left: parseInt($(".detalle_productos").css("left"))-parseInt($(".detalle_productos").outerWidth()),
-        opacity:  1
-      },{
-        complete: function(){
-            $.ajax({
-              url: $("#base_url").val()+"ajax/get_detalle",
-              type: "POST",
-              data: "csrf_token_infobox="+$('input[name=csrf_token_infobox]').val()+"&id="+obj.attr("rel")+"&tabla=producto",
-              dataType: "json"
-            }).done( function(res){
-
-                $(".detalle_productos").find('img').eq(0).attr("src",$("#base_url").val()+"public/images/"+res.im_producto);
-                $(".detalle_productos").find('h3').eq(0).text(res.no_producto);
-                $(".detalle_productos").find('p').eq(0).html(removeHTML(res.tx_producto));
-                $(".a_regresar_productos").css("opacity",1);
-
-            }).fail(function(jqXHR, textStatus, errorThrown){
-
-              alert('Hubo un error al listar los datos: '+errorThrown);
-
-            });
-        }
-      });
-
-      $(".slide_productos").animate(
-        {
-          left: parseInt($(".slide_productos").css("left"))-parseInt($(".slide_productos").outerWidth()),
-          opacity:  1
-        },
-        {
-          complete: function() {
-            $(this).css("display","none");
-          }
-        }
-      );
-    })*/
+   
 
 
     $(".a_regresar_productos").click( function(){
@@ -302,7 +255,7 @@ $(document).ready(function () {
             $.ajax({
               url: $("#base_url").val()+"ajax/get_detalle",
               type: "POST",
-              data: "csrf_token_infobox="+$('input[name=csrf_token_infobox]').val()+"&id="+obj.attr("rel")+"&tabla=servicio",
+              data: "csrf_token_softwarefactory="+$('input[name=csrf_token_softwarefactory]').val()+"&id="+obj.attr("rel")+"&tabla=servicio",
               dataType: "json"
             }).done( function(res){
 
@@ -568,7 +521,7 @@ function animacion_click(obj,w,t,l)
         $.ajax({
             url: $("#base_url").val()+"ajax/get_detalle",
             type: "POST",
-            data: "csrf_token_infobox="+$('input[name=csrf_token_infobox]').val()+"&id="+obj.attr("rel")+"&tabla=home",
+            data: "csrf_token_softwarefactory="+$('input[name=csrf_token_softwarefactory]').val()+"&id="+obj.attr("rel")+"&tabla=home",
             dataType: "json"
           }).done( function(res){
 
