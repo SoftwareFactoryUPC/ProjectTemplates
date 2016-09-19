@@ -126,6 +126,8 @@ class Usuario extends CI_Controller
 			redirect("panel/usuario/listado");
 		}
 	}
+
+	
 	
 }
 ?>

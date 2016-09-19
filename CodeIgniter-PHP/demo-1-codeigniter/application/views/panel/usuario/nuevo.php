@@ -42,18 +42,7 @@
 					<label>Contraseña <span>(*)</span></label>
 					<input type="text" name="usuclave" minlength="6" class="required" />
 				</div>
-				<div class="block">
-					<label>Grupo <span>(*)</span></label>
-					<select name="grupo" class="required" class="select_2">
-						<option value="">- Seleccione una opción -</option>
-						<?php 
-						if(is_array($grupo)){ 
-							foreach ($grupo as $value) {
-						?>
-							<option value="<?php echo $value['id_grupo'] ?>"><?php echo $value['grunombre'] ?></option>
-						<?php }} ?>
-					</select>
-				</div>
+				
 				
 			</article>
 

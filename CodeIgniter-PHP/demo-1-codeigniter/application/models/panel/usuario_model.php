@@ -28,10 +28,8 @@ class Usuario_model extends CI_Model
 	public function get_listado_id($id=0)
 	{
 
-		$query = $this->db->query("SELECT  u.id_usuario, u.usunombres,u.usuapepaterno,u.usuapematerno, u.usuemail, u.usunick, g.id_grupo 
+		$query = $this->db->query("SELECT  u.id_usuario, u.usunombres,u.usuapepaterno,u.usuapematerno, u.usuemail, u.usunick 
 								   FROM  usuario u
-								   INNER JOIN usuario_grupo ug ON ug.usuario_id_usuario = u.id_usuario
-								   INNER JOIN grupo g ON g.id_grupo = ug.grupo_id_grupo
 								   WHERE u.id_usuario = ?
 								   ORDER BY u.id_usuario ASC", array($id));
 
@@ -75,7 +73,17 @@ class Usuario_model extends CI_Model
 				
 	}
 
+	public function Eliminar($id=0)
+		{
 
+			$this->db->trans_start();
+
+			$this->db->where('id_usuario', $id);
+			$this->db->delete("usuario");
+
+			$this->db->trans_complete();
+
+		}
 
 	public function Actualizar()
 	{
