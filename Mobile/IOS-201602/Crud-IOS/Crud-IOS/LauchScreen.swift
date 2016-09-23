@@ -13,12 +13,12 @@ class LaunchScreen: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        performSelector(#selector(LaunchScreen.showNavController),withObject: nil,afterDelay:3)
+        perform(#selector(LaunchScreen.showNavController),with: nil,afterDelay:3)
     }
     
     func showNavController()
     {
-        performSegueWithIdentifier("LaunchScreen", sender: self)
+        performSegue(withIdentifier: "LaunchScreen", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

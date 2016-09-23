@@ -8,27 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate {
     
     @IBOutlet weak var itemTexField: UITextField!
     @IBOutlet weak var tableview: UITableView!
     
     let todoList = TodoList();
     
-    @IBAction func addButtonPressed(sender: UIButton){
-            print("Agregando un elemento a la lista:\(itemTexField.text)")
+    @IBAction func addButtonPressed(_ sender: UIButton){
+        print("Agregando un elemento a la lista:\(itemTexField.text)")
         
-            todoList.addItem(itemTexField.text!)
+        todoList.addItem(itemTexField.text!)
         tableview.reloadData()
+        
+        
+        self.itemTexField?.resignFirstResponder()
     }
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableview.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableview.dataSource = todoList
+        tableview.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +42,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        
+        self.itemTexField?.resignFirstResponder()
+        
+    }
 }
 
