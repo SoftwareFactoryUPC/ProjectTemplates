@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E602884C1D88C4CD00AA156E /* notes_online.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E602884B1D88C4CD00AA156E /* notes_online.jpg */; };
+		E62C9BEC1D81C7A800C04A50 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C9BEB1D81C7A800C04A50 /* TodoList.swift */; };
+		E64CC0031D7F856200323FCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CC0021D7F856200323FCA /* AppDelegate.swift */; };
+		E64CC0051D7F856200323FCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CC0041D7F856200323FCA /* ViewController.swift */; };
+		E64CC0081D7F856200323FCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64CC0061D7F856200323FCA /* Main.storyboard */; };
+		E64CC00A1D7F856200323FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64CC0091D7F856200323FCA /* Assets.xcassets */; };
+		E64CC00D1D7F856200323FCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64CC00B1D7F856200323FCA /* LaunchScreen.storyboard */; };
+		E64CC0181D7F856200323FCA /* Crud_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CC0171D7F856200323FCA /* Crud_IOSTests.swift */; };
+		E64CC0231D7F856200323FCA /* Crud_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CC0221D7F856200323FCA /* Crud_IOSUITests.swift */; };
+		E6994EC31D8BD2E30037688D /* LauchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6994EC21D8BD2E30037688D /* LauchScreen.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E64CC0141D7F856200323FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E64CBFF71D7F856200323FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E64CBFFE1D7F856200323FCA;
+			remoteInfo = "Crud-IOS";
+		};
+		E64CC01F1D7F856200323FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E64CBFF71D7F856200323FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E64CBFFE1D7F856200323FCA;
+			remoteInfo = "Crud-IOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E602884B1D88C4CD00AA156E /* notes_online.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = notes_online.jpg; path = ../../../../Downloads/notes_online.jpg; sourceTree = "<group>"; };
+		E62C9BEB1D81C7A800C04A50 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		E64CBFFF1D7F856200323FCA /* Crud-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crud-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64CC0021D7F856200323FCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E64CC0041D7F856200323FCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E64CC0071D7F856200323FCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E64CC0091D7F856200323FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E64CC00C1D7F856200323FCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E64CC00E1D7F856200323FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64CC0131D7F856200323FCA /* Crud-IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crud-IOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64CC0171D7F856200323FCA /* Crud_IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud_IOSTests.swift; sourceTree = "<group>"; };
+		E64CC0191D7F856200323FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E64CC01E1D7F856200323FCA /* Crud-IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crud-IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64CC0221D7F856200323FCA /* Crud_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud_IOSUITests.swift; sourceTree = "<group>"; };
+		E64CC0241D7F856200323FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6994EC21D8BD2E30037688D /* LauchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E64CBFFC1D7F856200323FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC0101D7F856200323FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC01B1D7F856200323FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E64CBFF61D7F856200323FCA = {
+			isa = PBXGroup;
+			children = (
+				E64CC0011D7F856200323FCA /* Crud-IOS */,
+				E64CC0161D7F856200323FCA /* Crud-IOSTests */,
+				E64CC0211D7F856200323FCA /* Crud-IOSUITests */,
+				E64CC0001D7F856200323FCA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E64CC0001D7F856200323FCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E64CBFFF1D7F856200323FCA /* Crud-IOS.app */,
+				E64CC0131D7F856200323FCA /* Crud-IOSTests.xctest */,
+				E64CC01E1D7F856200323FCA /* Crud-IOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E64CC0011D7F856200323FCA /* Crud-IOS */ = {
+			isa = PBXGroup;
+			children = (
+				E64CC0021D7F856200323FCA /* AppDelegate.swift */,
+				E64CC0041D7F856200323FCA /* ViewController.swift */,
+				E64CC0061D7F856200323FCA /* Main.storyboard */,
+				E64CC0091D7F856200323FCA /* Assets.xcassets */,
+				E64CC00B1D7F856200323FCA /* LaunchScreen.storyboard */,
+				E602884B1D88C4CD00AA156E /* notes_online.jpg */,
+				E64CC00E1D7F856200323FCA /* Info.plist */,
+				E62C9BEB1D81C7A800C04A50 /* TodoList.swift */,
+				E6994EC21D8BD2E30037688D /* LauchScreen.swift */,
+			);
+			path = "Crud-IOS";
+			sourceTree = "<group>";
+		};
+		E64CC0161D7F856200323FCA /* Crud-IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				E64CC0171D7F856200323FCA /* Crud_IOSTests.swift */,
+				E64CC0191D7F856200323FCA /* Info.plist */,
+			);
+			path = "Crud-IOSTests";
+			sourceTree = "<group>";
+		};
+		E64CC0211D7F856200323FCA /* Crud-IOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E64CC0221D7F856200323FCA /* Crud_IOSUITests.swift */,
+				E64CC0241D7F856200323FCA /* Info.plist */,
+			);
+			path = "Crud-IOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E64CBFFE1D7F856200323FCA /* Crud-IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E64CC0271D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOS" */;
+			buildPhases = (
+				E64CBFFB1D7F856200323FCA /* Sources */,
+				E64CBFFC1D7F856200323FCA /* Frameworks */,
+				E64CBFFD1D7F856200323FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crud-IOS";
+			productName = "Crud-IOS";
+			productReference = E64CBFFF1D7F856200323FCA /* Crud-IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E64CC0121D7F856200323FCA /* Crud-IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E64CC02A1D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOSTests" */;
+			buildPhases = (
+				E64CC00F1D7F856200323FCA /* Sources */,
+				E64CC0101D7F856200323FCA /* Frameworks */,
+				E64CC0111D7F856200323FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E64CC0151D7F856200323FCA /* PBXTargetDependency */,
+			);
+			name = "Crud-IOSTests";
+			productName = "Crud-IOSTests";
+			productReference = E64CC0131D7F856200323FCA /* Crud-IOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E64CC01D1D7F856200323FCA /* Crud-IOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E64CC02D1D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOSUITests" */;
+			buildPhases = (
+				E64CC01A1D7F856200323FCA /* Sources */,
+				E64CC01B1D7F856200323FCA /* Frameworks */,
+				E64CC01C1D7F856200323FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E64CC0201D7F856200323FCA /* PBXTargetDependency */,
+			);
+			name = "Crud-IOSUITests";
+			productName = "Crud-IOSUITests";
+			productReference = E64CC01E1D7F856200323FCA /* Crud-IOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E64CBFF71D7F856200323FCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CRUD;
+				TargetAttributes = {
+					E64CBFFE1D7F856200323FCA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E64CC0121D7F856200323FCA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E64CBFFE1D7F856200323FCA;
+					};
+					E64CC01D1D7F856200323FCA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E64CBFFE1D7F856200323FCA;
+					};
+				};
+			};
+			buildConfigurationList = E64CBFFA1D7F856200323FCA /* Build configuration list for PBXProject "Crud-IOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E64CBFF61D7F856200323FCA;
+			productRefGroup = E64CC0001D7F856200323FCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E64CBFFE1D7F856200323FCA /* Crud-IOS */,
+				E64CC0121D7F856200323FCA /* Crud-IOSTests */,
+				E64CC01D1D7F856200323FCA /* Crud-IOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E64CBFFD1D7F856200323FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E602884C1D88C4CD00AA156E /* notes_online.jpg in Resources */,
+				E64CC00D1D7F856200323FCA /* LaunchScreen.storyboard in Resources */,
+				E64CC00A1D7F856200323FCA /* Assets.xcassets in Resources */,
+				E64CC0081D7F856200323FCA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC0111D7F856200323FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC01C1D7F856200323FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E64CBFFB1D7F856200323FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62C9BEC1D81C7A800C04A50 /* TodoList.swift in Sources */,
+				E6994EC31D8BD2E30037688D /* LauchScreen.swift in Sources */,
+				E64CC0051D7F856200323FCA /* ViewController.swift in Sources */,
+				E64CC0031D7F856200323FCA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC00F1D7F856200323FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64CC0181D7F856200323FCA /* Crud_IOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E64CC01A1D7F856200323FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64CC0231D7F856200323FCA /* Crud_IOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E64CC0151D7F856200323FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E64CBFFE1D7F856200323FCA /* Crud-IOS */;
+			targetProxy = E64CC0141D7F856200323FCA /* PBXContainerItemProxy */;
+		};
+		E64CC0201D7F856200323FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E64CBFFE1D7F856200323FCA /* Crud-IOS */;
+			targetProxy = E64CC01F1D7F856200323FCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E64CC0061D7F856200323FCA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E64CC0071D7F856200323FCA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E64CC00B1D7F856200323FCA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E64CC00C1D7F856200323FCA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E64CC0251D7F856200323FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E64CC0261D7F856200323FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E64CC0281D7F856200323FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Crud-IOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E64CC0291D7F856200323FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Crud-IOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E64CC02B1D7F856200323FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Crud-IOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crud-IOS.app/Crud-IOS";
+			};
+			name = Debug;
+		};
+		E64CC02C1D7F856200323FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Crud-IOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crud-IOS.app/Crud-IOS";
+			};
+			name = Release;
+		};
+		E64CC02E1D7F856200323FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Crud-IOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Crud-IOS";
+			};
+			name = Debug;
+		};
+		E64CC02F1D7F856200323FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Crud-IOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioos.Crud-IOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Crud-IOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E64CBFFA1D7F856200323FCA /* Build configuration list for PBXProject "Crud-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64CC0251D7F856200323FCA /* Debug */,
+				E64CC0261D7F856200323FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E64CC0271D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64CC0281D7F856200323FCA /* Debug */,
+				E64CC0291D7F856200323FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E64CC02A1D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64CC02B1D7F856200323FCA /* Debug */,
+				E64CC02C1D7F856200323FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E64CC02D1D7F856200323FCA /* Build configuration list for PBXNativeTarget "Crud-IOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64CC02E1D7F856200323FCA /* Debug */,
+				E64CC02F1D7F856200323FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E64CBFF71D7F856200323FCA /* Project object */;
+}
