@@ -1,3 +1,4 @@
+<?php //echo "<pre>"; print_r($tproductos); echo "</pre>"; ?>
 <!doctype html>
 <html><head>
     <meta charset="utf-8">
@@ -63,20 +64,22 @@
 
             tooltip: {
                 formatter: function() { 
-                    return this.point.name +': '+ this.y +' %';
+                    return this.point.name +': '+ this.y +' SubCategorias';
                         
                 }   
             },
             series: [
                 {
                 borderWidth: 2,
-                borderColor: '#F1F3EB',
+                borderColor: '#ffffff',
                 shadow: false,  
                 type: 'pie',
                 name: 'Income',
                 innerSize: '65%',
                 data: [
-                    { name: 'load percentage', y: 45.0, color: '#b2c831' }
+                   <?php foreach ($tdona1 as $value){ ?>
+                { name:'<?php echo $value["no_categoria"] ?>',  y:<?php echo $value["total"] ?>},
+                <?php } ?>
                 ],
                 dataLabels: {
                     enabled: false,
@@ -91,7 +94,10 @@
 /*** second Chart in Dashboard page ***/
 
     $(document).ready(function() {
-        var data=[{ name: 'Used', y: 65.0 },{ name: 'Rest', y: 35.0 }
+        var data=[  
+                <?php foreach ($tdona2 as $value){ ?>
+                { name:'<?php echo $value["no_categoria"] ?>',  y:<?php echo $value["total"] ?>},
+                <?php } ?>
                 ];
         info = new Highcharts.Chart({
             chart: {
@@ -108,7 +114,7 @@
 
             tooltip: {
                 formatter: function() { 
-                    return this.point.name +': '+ this.y +' %';
+                    return this.point.name +': '+ this.y +' Articulos';
                         
                 }   
             },
@@ -142,7 +148,7 @@ $(document).ready(function () {
                             
             },
          title: {
-            text: 'Monthly Average Temperature',
+            text: 'Otro tipo de graficos',
             x: -20 //center
         },
         xAxis: {
@@ -183,10 +189,212 @@ $(document).ready(function () {
         }]
     });
 });
+Highcharts.theme = {
+   colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+      '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+   chart: {
+      backgroundColor: {
+         linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+         stops: [
+            [0, '#2a2a2b'],
+            [1, '#3e3e40']
+         ]
+      },
+      style: {
+         fontFamily: '\'Unica One\', sans-serif'
+      },
+      plotBorderColor: '#606063'
+   },
+   title: {
+      style: {
+         color: '#E0E0E3',
+         textTransform: 'uppercase',
+         fontSize: '20px'
+      }
+   },
+   subtitle: {
+      style: {
+         color: '#E0E0E3',
+         textTransform: 'uppercase'
+      }
+   },
+   xAxis: {
+      gridLineColor: '#707073',
+      labels: {
+         style: {
+            color: '#E0E0E3'
+         }
+      },
+      lineColor: '#707073',
+      minorGridLineColor: '#505053',
+      tickColor: '#707073',
+      title: {
+         style: {
+            color: '#A0A0A3'
 
+         }
+      }
+   },
+   yAxis: {
+      gridLineColor: '#707073',
+      labels: {
+         style: {
+            color: '#E0E0E3'
+         }
+      },
+      lineColor: '#707073',
+      minorGridLineColor: '#505053',
+      tickColor: '#707073',
+      tickWidth: 1,
+      title: {
+         style: {
+            color: '#A0A0A3'
+         }
+      }
+   },
+   tooltip: {
+      backgroundColor: 'rgba(0, 0, 0, 0.85)',
+      style: {
+         color: '#F0F0F0'
+      }
+   },
+   plotOptions: {
+      series: {
+         dataLabels: {
+            color: '#B0B0B3'
+         },
+         marker: {
+            lineColor: '#333'
+         }
+      },
+      boxplot: {
+         fillColor: '#505053'
+      },
+      candlestick: {
+         lineColor: 'white'
+      },
+      errorbar: {
+         color: 'white'
+      }
+   },
+   legend: {
+      itemStyle: {
+         color: '#E0E0E3'
+      },
+      itemHoverStyle: {
+         color: '#FFF'
+      },
+      itemHiddenStyle: {
+         color: '#606063'
+      }
+   },
+   credits: {
+      style: {
+         color: '#666'
+      }
+   },
+   labels: {
+      style: {
+         color: '#707073'
+      }
+   },
+
+   drilldown: {
+      activeAxisLabelStyle: {
+         color: '#F0F0F3'
+      },
+      activeDataLabelStyle: {
+         color: '#F0F0F3'
+      }
+   },
+
+   navigation: {
+      buttonOptions: {
+         symbolStroke: '#DDDDDD',
+         theme: {
+            fill: '#505053'
+         }
+      }
+   },
+
+   // scroll charts
+   rangeSelector: {
+      buttonTheme: {
+         fill: '#505053',
+         stroke: '#000000',
+         style: {
+            color: '#CCC'
+         },
+         states: {
+            hover: {
+               fill: '#707073',
+               stroke: '#000000',
+               style: {
+                  color: 'white'
+               }
+            },
+            select: {
+               fill: '#000003',
+               stroke: '#000000',
+               style: {
+                  color: 'white'
+               }
+            }
+         }
+      },
+      inputBoxBorderColor: '#505053',
+      inputStyle: {
+         backgroundColor: '#333',
+         color: 'silver'
+      },
+      labelStyle: {
+         color: 'silver'
+      }
+   },
+
+   navigator: {
+      handles: {
+         backgroundColor: '#666',
+         borderColor: '#AAA'
+      },
+      outlineColor: '#CCC',
+      maskFill: 'rgba(255,255,255,0.1)',
+      series: {
+         color: '#7798BF',
+         lineColor: '#A6C7ED'
+      },
+      xAxis: {
+         gridLineColor: '#505053'
+      }
+   },
+
+   scrollbar: {
+      barBackgroundColor: '#808083',
+      barBorderColor: '#808083',
+      buttonArrowColor: '#CCC',
+      buttonBackgroundColor: '#606063',
+      buttonBorderColor: '#606063',
+      rifleColor: '#FFF',
+      trackBackgroundColor: '#404043',
+      trackBorderColor: '#404043'
+   },
+
+   // special colors for some of the
+   legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+   background2: '#505053',
+   dataLabelsColor: '#B0B0B3',
+   textColor: '#C0C0C0',
+   contrastTextColor: '#F0F0F3',
+   maskColor: 'rgba(255,255,255,0.3)'
+};
+
+Highcharts.setOptions(Highcharts.theme);
 $(document).ready(function () {
     // Create the chart
     info = new Highcharts.Chart({
+        colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
+            ],
         chart: {
                 renderTo: 'pie',
                 margin: [0, 0, 0, 0],
@@ -196,117 +404,61 @@ $(document).ready(function () {
                             
             },
         title: {
-            text: 'Browser market shares. January, 2015 to May, 2015'
+            text: 'Cantidad de Praductos por Categorias',
+            style: {
+                    color: '#E0E0E3',
+                    textTransform: 'uppercase',
+                    fontSize: '20px'
+                }
         },
 
         plotOptions: {
             series: {
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}: {point.y:.1f}%'
+                    format: '{point.name}: {point.y:.1f}',
+                    style: {
+                        color: '#B0B0B3'
+                    }
                 }
             }
         },
 
         tooltip: {
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> Productos <br/>'
         },
         series: [{
             name: 'Brands',
             colorByPoint: true,
-            data: [{
-                name: 'Microsoft Internet Explorer',
-                y: 56.33,
-                drilldown: 'Microsoft Internet Explorer'
-            }, {
-                name: 'Chrome',
-                y: 24.03,
-                drilldown: 'Chrome'
-            }, {
-                name: 'Firefox',
-                y: 10.38,
-                drilldown: 'Firefox'
-            }, {
-                name: 'Safari',
-                y: 4.77,
-                drilldown: 'Safari'
-            }, {
-                name: 'Opera',
-                y: 0.91,
-                drilldown: 'Opera'
-            }, {
-                name: 'Proprietary or Undetectable',
-                y: 0.2,
-                drilldown: null
-            }]
+            color: '#ffffff',
+            data: [
+
+
+              <?php foreach ($tpie as $value){ ?>
+                { name:'<?php echo $value["no_categoria"] ?>',  y:<?php echo $value["total"] ?>, drilldown: '<?php echo $value["id_categoria"] ?>'},
+                <?php } ?>
+
+           ]
         }],
         drilldown: {
-            series: [{
-                name: 'Microsoft Internet Explorer',
-                id: 'Microsoft Internet Explorer',
-                data: [
-                    ['v11.0', 24.13],
-                    ['v8.0', 17.2],
-                    ['v9.0', 8.11],
-                    ['v10.0', 5.33],
-                    ['v6.0', 1.06],
-                    ['v7.0', 0.5]
-                ]
-            }, {
-                name: 'Chrome',
-                id: 'Chrome',
-                data: [
-                    ['v40.0', 5],
-                    ['v41.0', 4.32],
-                    ['v42.0', 3.68],
-                    ['v39.0', 2.96],
-                    ['v36.0', 2.53],
-                    ['v43.0', 1.45],
-                    ['v31.0', 1.24],
-                    ['v35.0', 0.85],
-                    ['v38.0', 0.6],
-                    ['v32.0', 0.55],
-                    ['v37.0', 0.38],
-                    ['v33.0', 0.19],
-                    ['v34.0', 0.14],
-                    ['v30.0', 0.14]
-                ]
-            }, {
-                name: 'Firefox',
-                id: 'Firefox',
-                data: [
-                    ['v35', 2.76],
-                    ['v36', 2.32],
-                    ['v37', 2.31],
-                    ['v34', 1.27],
-                    ['v38', 1.02],
-                    ['v31', 0.33],
-                    ['v33', 0.22],
-                    ['v32', 0.15]
-                ]
-            }, {
-                name: 'Safari',
-                id: 'Safari',
-                data: [
-                    ['v8.0', 2.56],
-                    ['v7.1', 0.77],
-                    ['v5.1', 0.42],
-                    ['v5.0', 0.3],
-                    ['v6.1', 0.29],
-                    ['v7.0', 0.26],
-                    ['v6.2', 0.17]
-                ]
-            }, {
-                name: 'Opera',
-                id: 'Opera',
-                data: [
-                    ['v12.x', 0.34],
-                    ['v28', 0.24],
-                    ['v27', 0.17],
-                    ['v29', 0.16]
-                ]
-            }]
+            series: [
+                  <?php foreach ($tpiedatos as $value){ ?>
+                { name:'<?php echo $value["id_categoria"] ?>',  id:'<?php echo $value["id_categoria"] ?>', 
+                 data: [
+                  <?php foreach ($tpiedatos as $value2){ ?>
+                 <?php if($value["id_categoria"] == $value2["id_categoria"] ){?>
+                 ['<?php echo $value2["no_subcategoria"] ?>',  <?php echo $value2["total"] ?>],
+                 <?php } ?>
+                 <?php } ?>
+                 ]
+                },
+                <?php } ?>
+
+
+
+
+          ]
         }
     });
 });
@@ -341,13 +493,11 @@ $(document).ready(function () {
             enabled: false
         },
         series: [{
-            name: 'Unique users',
+            name: 'SubCategorias',
             data: [
-                ['Website visits',      15654],
-                ['Downloads',            4064],
-                ['Requested price list', 1987],
-                ['Invoice sent',          976],
-                ['Finalized',             846]
+                <?php foreach ($tpiramide as $value){ ?>
+                ['<?php echo $value["no_subcategoria"] ?>',   <?php echo $value["cantidad"] ?>],
+                <?php } ?>
             ]
         }]
     });
@@ -391,18 +541,11 @@ $(document).ready(function () {
             name: 'Browser share',
             innerSize: '40%',
             data: [
-                ['Firefox',   10.38],
-                ['IE',       56.33],
-                ['Chrome', 24.03],
-                ['Safari',    4.77],
-                ['Opera',     0.91],
-                {
-                    name: 'Proprietary or Undetectable',
-                    y: 0.2,
-                    dataLabels: {
-                        enabled: false
-                    }
-                }
+
+                <?php foreach ($tproductos as $value){ ?>
+                ['<?php echo $value["no_categoria"] ?>',   <?php echo $value["total"] ?>],
+                <?php } ?>
+            
             ]
         }]
     });
@@ -453,66 +596,29 @@ $(document).ready(function () {
         series: [{
             name: 'Brands',
             colorByPoint: true,
-            data: [{
-                name: 'Microsoft Internet Explorer',
-                y: 56.33,
-                drilldown: 'Microsoft Internet Explorer'
-            }, {
-                name: 'Chrome',
-                y: 24.03,
-                drilldown: 'Chrome'
-            }]
+            data: [
+                    <?php foreach ($tbarras as $value){ ?>
+                { name:'<?php echo $value["no_subcategoria"] ?>',  y: <?php echo $value["cantidad"] ?>, drilldown: '<?php echo $value["no_subcategoria"] ?>'},
+                <?php } ?>
+                  ]
         }],
         drilldown: {
             series: [{
-                name: 'Microsoft Internet Explorer',
-                id: 'Microsoft Internet Explorer',
+                name: 'Anillos',
+                id: 'Anillos',
                 data: [
-                    [
-                        'v11.0', 24.13 ],
-                    [
-                        'v8.0', 17.2 ],
-                    [
-                        'v9.0', 8.11 ],
-                    [
-                        'v10.0', 5.33 ],
-                    [
-                        'v6.0', 1.06 ],
-                    [
-                        'v7.0', 0.5 ]
+
+                <?php foreach ($tbarras1 as $value){ ?>
+                ['<?php echo $value["no_producto"] ?>', <?php echo $value["cantidad"] ?>],
+                <?php } ?>
                 ]
             }, {
-                name: 'Chrome',
-                id: 'Chrome',
+                name: 'Aretes',
+                id: 'Aretes',
                 data: [
-                    [
-                        'v40.0', 5],
-                    [
-                        'v41.0', 4.32],
-                    [
-                        'v42.0', 3.68],
-                    [
-                        'v39.0', 2.96],
-                    [
-                        'v36.0', 2.53],
-                    [
-                        'v43.0', 1.45],
-                    [
-                        'v31.0', 1.24],
-                    [
-                        'v35.0', 0.85],
-                    [
-                        'v38.0', 0.6],
-                    [
-                        'v32.0', 0.55],
-                    [
-                        'v37.0', 0.38],
-                    [
-                        'v33.0', 0.19],
-                    [
-                        'v34.0', 0.14],
-                    [
-                        'v30.0', 0.14]
+                    <?php foreach ($tbarras2 as $value){ ?>
+                ['<?php echo $value["no_producto"] ?>', <?php echo $value["cantidad"] ?>],
+                <?php } ?>
                 ]
             }]
         }
@@ -577,7 +683,7 @@ $(document).ready(function () {
         </div> 
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>                            
+              <li class="active"><a href=""><i class="icon-home icon-white"></i> Home</a></li>                            
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -591,7 +697,7 @@ $(document).ready(function () {
           <!-- USER PROFILE BLOCK -->
             <div class="col-sm-9 col-lg-9">
                 <div class="dash-unit" style="height:500px;">
-                    <dtitle>Disk Space</dtitle>
+                    <dtitle>Cantidad de productos por Categoria</dtitle>
                     <hr>
                     <div id="pie"></div>
                 </div>
@@ -600,12 +706,12 @@ $(document).ready(function () {
           <!-- DONUT CHART BLOCK -->
             <div class="col-sm-3 col-lg-3">
                 <div class="dash-unit" style="height:500px;">
-                    <dtitle>Site Bandwidth</dtitle>
+                    <dtitle>Seleccion de productos</dtitle>
                     <hr>
                     <div id="load"></div>
-                    <h2>45%</h2>
+                    <h2>Categorias</h2>
                     <div id="space"></div>
-                    <h2>45%</h2>
+                    <h2>Subcategorias</h2>
                 </div>
             </div>
      </div><!-- /row -->
@@ -616,7 +722,7 @@ $(document).ready(function () {
 
         <div class="col-sm-3 col-lg-3">
             <div class="dash-unit" style="height:350px;">
-                <dtitle>Disk Space</dtitle>
+                <dtitle>Algunos Productos</dtitle>
                 <hr>
                 <br>
                 <br>
@@ -625,7 +731,7 @@ $(document).ready(function () {
         </div>
         <div class="col-sm-9 col-lg-9">
             <div class="dash-unit" style="height:350px;">
-                <dtitle>Disk Space</dtitle>
+                <dtitle>Otro tipo de estadisticas</dtitle>
                 <hr>
                 <div id="cerro"></div>
             </div>
@@ -641,14 +747,14 @@ $(document).ready(function () {
       
         <div class="col-sm-6 col-lg-6">
             <div class="dash-unit">
-                <dtitle>Disk Space</dtitle>
+                <dtitle>Categorias</dtitle>
                 <hr>
                 <div id="dona"></div>
             </div>
         </div>
          <div class="col-sm-6 col-lg-6">
             <div class="dash-unit">
-                <dtitle>Disk Space</dtitle>
+                <dtitle>Comparacion de 2 subcategorias</dtitle>
                 <hr>
                 <div id="barra"></div>
             </div>
